@@ -3,7 +3,7 @@
 Mark Black  
 12/11/17
 
-![Bitcoin Logo](bitcoin.png =250x)
+![Bitcoin Logo]<img src="bitcoin.png" alt="Drawing" style="width: 200px;"/>
 ## Is Bitcoin Price Predictable? ## 
 
 ### Domain Background
