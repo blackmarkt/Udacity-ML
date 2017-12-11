@@ -8,19 +8,24 @@ Mark Black
 ## Is Bitcoin Price Predictable? ## 
 
 ### Domain Background
-_(approx. 1-2 paragraphs)_
 references: https://en.wikipedia.org/wiki/History_of_bitcoin
 
 ***What is a Bitcoin?***
 Bitcoin is a cryptocurrency that was designed as a digital payments processing system that relies on crytography in order to secure transactions. There is much mythology built around Bitcoin's creation and it's creator Satoshi Nakamoto who in late 2008 authored the white paper "Bitcoin: A Peer-to-Peer Electronic Cash System". Bitcoin's technological revolution is it's blockchain technology where all transactions including the creation of new bitcoins are stored and verified. Since 2008 countless cryptocurrencies known as [Altcoins](http://www.businessinsider.com/list-top-cryptocurrencies-analysis-comparison-2017-10) have emerged in the space such as Ethereum and Litecoin. Over the past couple of year Bitcoin has skyrocketed from obscurity into mainstream as it's price continues it's meteoric rise with many calling this rapid ascension a "bubble". Recently the CBOE and CME offered Bitcoin futures for trading signally the cryptocurrecncy's legitimacy as an tradeable asset. 
 
 <img src="images/bitcoin_price_up.jpg" width="300"/>
+
+
+Is Bitcoin a "bubble"? Is it here to stay? Will global Central Banks and governments wipe out Bitcoin holders? These are the central questions that plague crytocurrencies today in their nascent stage. These questions are central for investors and potential investors who are trying to assess the long-term structural risks inherent in new asset classes. 
+
+From a trading standpoint the above questions are not as interesting as trying to determine whether shorter-term opportunities exist in the price movements of assets. This proposal is concerned with the questions:
+<br><br>
+***Is the price of Bitcoin predictable?*** 
+<br><br>
+***Can we use Machine Learning to aid us in understanding and possibly forecasting the price of cryptocurrencies*** 
+ 
+Misc Ideas:
 Silk Road
-
-Is Bitcoin a "bubble"? Is it here to stay? Will global Central Banks and governments wipe out Bitcoin holders? These are the central questions that plague crytocurrencies today in their nascent stage. These questions are central for investors and potential investors in order to assess the long-term structural risks inherent in new asset classes 
-
-But this proposal is concerned with the question is ***Is the price of Bitcoin predictable?***
-
 
 In this section, provide brief details on the background information of the domain from which the project is proposed. Historical information relevant to the project should be included. It should be clear how or why a problem in the domain can or should be solved. Related academic research should be appropriately cited in this section, including why that research is relevant. Additionally, a discussion of your personal motivation for investigating a particular problem in the domain is encouraged but not required.
 
