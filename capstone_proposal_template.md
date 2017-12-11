@@ -3,8 +3,7 @@
 Mark Black  
 12/11/17
 
-## Proposal
-_(approx. 2-3 pages)_
+Is Bitcoin Price Predictable?
 
 ### Domain Background
 _(approx. 1-2 paragraphs)_
