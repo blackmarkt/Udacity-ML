@@ -15,7 +15,6 @@ Bitcoin is a cryptocurrency that was designed as a digital payments processing s
 
 <img src="images/bitcoin_price_up.jpg" width="300"/>
 
-
 Is Bitcoin a "bubble"? Is it here to stay? Will global Central Banks and governments wipe out Bitcoin holders? These are the central questions that plague crytocurrencies today in their nascent stage. These questions are central for investors and potential investors who are trying to assess the long-term structural risks inherent in new asset classes. 
 
 From a trading standpoint the above questions are not as interesting as trying to determine whether shorter-term opportunities exist in the price movements of assets. This proposal is concerned with the questions:
@@ -31,6 +30,16 @@ In this section, provide brief details on the background information of the doma
 
 ### Problem Statement
 _(approx. 1 paragraph)_
+
+<img src="images/money_machine.jpg" width="300"/>
+
+Much of finance and trading in particular is motivated by the crusade to find the next money machine and trading is no exception. So from a trading standpoint the above questions are not as interesting as trying to determine whether shorter-term opportunities exist in the price movements of assets. This proposal is concerned with the questions:
+<br><br>
+***Is the price of Bitcoin predictable?*** 
+<br><br>
+***Can we use Machine Learning to aid us in understanding and possibly forecasting the price of cryptocurrencies*** 
+
+In financial markets trying to understand and predict the price of assets is the name of the game and the introduction of a volatile instrument like Bitcoin presents opportunity as well as excitement for traders. The report will explore the underlying forces a wide array of potential factors that govern Bitcoin's price movements. Once we have identified the factors that exert the most influence we will try to train Machine Learning models that attempt to predict whether the tomorrow's price will be higher or lower than the previous day's closing price. In order to determine whether our model adds any informtional value we will compare our results against the benchmark of 50% or simply guessing.
 
 In this section, clearly describe the problem that is to be solved. The problem described should be well defined and should have at least one relevant potential solution. Additionally, describe the problem thoroughly such that it is clear that the problem is quantifiable (the problem can be expressed in mathematical or logical terms) , measurable (the problem can be measured by some metric and clearly observed), and replicable (the problem can be reproduced and occurs more than once).
 
