@@ -3,7 +3,7 @@
 Mark Black  
 12/11/17
 
-Is Bitcoin Price Predictable?
+## Is Bitcoin Price Predictable? ## 
 
 ### Domain Background
 _(approx. 1-2 paragraphs)_
