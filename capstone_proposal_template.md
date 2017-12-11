@@ -29,7 +29,7 @@ Much of finance and trading in particular is motivated by the crusade to find th
 <br><br>
 ***Can we use Machine Learning to aid us in understanding and possibly forecasting the price of cryptocurrencies*** 
 
-In financial markets trying to understand and predict the price of assets is the name of the game and the introduction of a volatile instrument like Bitcoin presents opportunity as well as excitement for traders. The report will explore the underlying forces a wide array of potential factors that govern Bitcoin's price movements. Once we have identified the factors that exert the most influence we will try to train Machine Learning models that attempt to predict whether the tomorrow's price will be higher or lower than the previous day's closing price. In order to determine whether our model adds any informtional value we will compare our results against the benchmark of 50% or simply guessing.
+In financial markets trying to understand and predict the price of assets is the name of the game and the introduction of a volatile instrument like Bitcoin presents opportunity as well as excitement for traders. The report will explore the underlying potential factors that govern Bitcoin's price movements. Once we have identified the factors that exert the most influence we will try to train Machine Learning models that attempt to predict whether the tomorrow's price will be higher or lower than the previous day's closing price. In order to determine whether our model adds any informtional value we will compare our results against the benchmark of 50% or simply guessing.
 
 ### Datasets and Inputs
 _(approx. 2-3 paragraphs)_
