@@ -3,11 +3,24 @@
 Mark Black  
 12/11/17
 
-<img src="bitcoin.png" width="300"/>
+<img src="images/bitcoin.png" width="300"/>
+
 ## Is Bitcoin Price Predictable? ## 
 
 ### Domain Background
 _(approx. 1-2 paragraphs)_
+references: https://en.wikipedia.org/wiki/History_of_bitcoin
+
+***What is a Bitcoin?***
+Bitcoin is a cryptocurrency that was designed as a digital payments processing system that relies on crytography in order to secure transactions. There is much mythology built around Bitcoin's creation and it's creator Satoshi Nakamoto who in late 2008 authored the white paper "Bitcoin: A Peer-to-Peer Electronic Cash System". Bitcoin's technological revolution is it's blockchain technology where all transactions including the creation of new bitcoins are stored and verified. Since 2008 countless cryptocurrencies known as [Altcoins](http://www.businessinsider.com/list-top-cryptocurrencies-analysis-comparison-2017-10) have emerged in the space such as Ethereum and Litecoin. Over the past couple of year Bitcoin has skyrocketed from obscurity into mainstream as it's price continues it's meteoric rise with many calling this rapid ascension a "bubble". Recently the CBOE and CME offered Bitcoin futures for trading signally the cryptocurrecncy's legitimacy as an tradeable asset. 
+
+<img src="images/bitcoin_price_up.jpg" width="300"/>
+Silk Road
+
+Is Bitcoin a "bubble"? Is it here to stay? Will global Central Banks and governments wipe out Bitcoin holders? These are the central questions that plague crytocurrencies today in their nascent stage. These questions are central for investors and potential investors in order to assess the long-term structural risks inherent in new asset classes 
+
+But this proposal is concerned with the question is ***Is the price of Bitcoin predictable?***
+
 
 In this section, provide brief details on the background information of the domain from which the project is proposed. Historical information relevant to the project should be included. It should be clear how or why a problem in the domain can or should be solved. Related academic research should be appropriately cited in this section, including why that research is relevant. Additionally, a discussion of your personal motivation for investigating a particular problem in the domain is encouraged but not required.
 
@@ -18,6 +31,9 @@ In this section, clearly describe the problem that is to be solved. The problem 
 
 ### Datasets and Inputs
 _(approx. 2-3 paragraphs)_
+
+**Datasets**
+Quandl Bitcoin Markets [bitstampUSD](https://www.quandl.com/data/BCHARTS/BITSTAMPUSD-Bitcoin-Markets-bitstampUSD) 
 
 In this section, the dataset(s) and/or input(s) being considered for the project should be thoroughly described, such as how they relate to the problem and why they should be used. Information such as how the dataset or input is (was) obtained, and the characteristics of the dataset or input, should be included with relevant references and citations as necessary It should be clear how the dataset(s) or input(s) will be used in the project and whether their use is appropriate given the context of the problem.
 
