@@ -25,9 +25,9 @@ Silk Road
 
 Much of finance and trading in particular is motivated by the crusade to find the next money machine and trading is no exception. So from a trading standpoint the above questions are not as interesting as trying to determine whether shorter-term opportunities exist in the price movements of assets. This proposal is concerned with the questions:
 <br><br>
-***Is the price of Bitcoin predictable?*** 
+***Is the price of Bitcoin predictable using a single or multiple factor model?*** 
 <br><br>
-***Can we use Machine Learning to aid us in understanding and possibly forecasting the price of cryptocurrencies*** 
+***Can we use Machine Learning techniques to aid us in understanding and possibly forecasting the price of cryptocurrencies*** 
 
 In financial markets trying to understand and predict the price of assets is the name of the game and the introduction of a volatile instrument like Bitcoin presents opportunity as well as excitement for traders. The report will explore the underlying potential factors that govern Bitcoin's price movements. Once we have identified the factors that exert the most influence we will try to train Machine Learning models that attempt to predict whether the tomorrow's price will be higher or lower than the previous day's closing price. In order to determine whether our model adds any informtional value we will compare our results against the  "coin flip test" with a benchmark of 50% or simply guessing.
 
@@ -35,15 +35,35 @@ In financial markets trying to understand and predict the price of assets is the
 _(approx. 2-3 paragraphs)_
 
 **Datasets**
-Quandl Bitcoin Markets [bitstampUSD](https://www.quandl.com/data/BCHARTS/BITSTAMPUSD-Bitcoin-Markets-bitstampUSD) 
+<br>
+***Quandl:***
+<br>
+[Bitcoin daily price bitstampUSD](https://www.quandl.com/data/BCHARTS/BITSTAMPUSD-Bitcoin-Markets-bitstampUSD) 
+<br>
+[Gold Futures](https://www.quandl.com/data/CHRIS/CME_GC1-Gold-Futures-Continuous-Contract-1-GC1-Front-Month)
+[M2 Money Supply (USD)](https://www.quandl.com/data/FRED/M2-M2-Money-Stock)
+Velocity of Money (USD):
+
+***St. Lious Fed (FRED)***
+<br>
+[Federal Reserve: Total Assets](https://fred.stlouisfed.org/series/WALCL)
+<br>
+[Bank of Japan: Total Assets](https://fred.stlouisfed.org/series/JPNASSETS)
+<br>
+[European Central Bank: Total Assets](https://fred.stlouisfed.org/series/ECBASSETS)
+<br>
+<br>
+Bitcoin trading volume breakdown:
+http://data.bitcoinity.org/markets/volume/all?c=e&t=b
 
 Exchange Rates/Currency Cross Pairs
-
+[Dollar Index](https://www.quandl.com/data/CHRIS/ICE_DX1-US-Dollar-Index-Futures-Continuous-Contract-1-DX1-Front-Month)
 
 In this section, the dataset(s) and/or input(s) being considered for the project should be thoroughly described, such as how they relate to the problem and why they should be used. Information such as how the dataset or input is (was) obtained, and the characteristics of the dataset or input, should be included with relevant references and citations as necessary It should be clear how the dataset(s) or input(s) will be used in the project and whether their use is appropriate given the context of the problem.
 
 ### Solution Statement
-_(approx. 1 paragraph)_
+
+In order to solve the problem(s) proposed above we must test various macro economic variables that may exhibit some colinearity with the price of Bitcoin. We will first look at assets or variables that would intuitively be correlated to the price of bitcoin like other alternative stores of money (i.e. gold) to currencies (i.e. USD) to monetary indicators like M2 Money supply. Once we have settled on a set of independent variables we can then train various models and test our model(s) on cross validated datasets. At the end of the day our model will be evaluated on it's ability to perform better than the 50/50 "coin flip" benchmark.
 
 In this section, clearly describe a solution to the problem. The solution should be applicable to the project domain and appropriate for the dataset(s) or input(s) given. Additionally, describe the solution thoroughly such that it is clear that the solution is quantifiable (the solution can be expressed in mathematical or logical terms) , measurable (the solution can be measured by some metric and clearly observed), and replicable (the solution can be reproduced and occurs more than once).
 
