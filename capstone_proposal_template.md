@@ -57,9 +57,9 @@ Velocity of Money (USD):
 [Bitcoin trading volume breakdown:](http://data.bitcoinity.org/markets/volume/all?c=e&t=b)
 
 Exchange Rates/Currency Cross Pairs
-[Dollar Index](https://www.quandl.com/data/CHRIS/ICE_DX1-US-Dollar-Index-Futures-Continuous-Contract-1-DX1-Front-Month)
+<br>
 
-In this section, the dataset(s) and/or input(s) being considered for the project should be thoroughly described, such as how they relate to the problem and why they should be used. Information such as how the dataset or input is (was) obtained, and the characteristics of the dataset or input, should be included with relevant references and citations as necessary It should be clear how the dataset(s) or input(s) will be used in the project and whether their use is appropriate given the context of the problem.
+[Dollar Index](https://www.quandl.com/data/CHRIS/ICE_DX1-US-Dollar-Index-Futures-Continuous-Contract-1-DX1-Front-Month)
 
 ### Solution Statement
 
@@ -74,7 +74,6 @@ _(approximately 1-2 paragraphs)_
 
 As mentioned above our baseline benchmark will be a 50/50 coin flip. We will build from there by testing various Supervised Learning models (listed in the Project Design) in order to discover which model or models perform best on the test set.  
 
-In this section, provide the details for a benchmark model or result that relates to the domain, problem statement, and intended solution. Ideally, the benchmark model or result contextualizes existing methods or known information in the domain and problem given, which could then be objectively compared to the solution. Describe how the benchmark model or result is measurable (can be measured by some metric and clearly observed) with thorough detail.
 
 ### Evaluation Metrics
 _(approx. 1-2 paragraphs)_
@@ -104,7 +103,10 @@ For classification problems that are skewed in their classification distribution
 ***Data Preparation***
 We will first organize the all the data from the sources mentioned. After all the data has been imported and collected some data exploratory analysis will be performed to detect any data that needs to be cleaned (i.e. NA's missing data) or if any variables need to be noramlized and convert any non-numeric variables into categorial dummy variables through the one-hot encoding process. After all the data has been properly prepared comes the process of splitting the data into a training and testing set. 
 
-***Model Selection, Training and Testing***
+***Naive Predictor Performance***
+
+
+***Model Selections and Implementation***
  
 Luckily there are a nice selection of Supervised Learning models at our disposable:
 
@@ -116,9 +118,17 @@ Luckily there are a nice selection of Supervised Learning models at our disposab
 - Support Vector Machines (SVM)
 - Logistic Regression
 
+***Model Implentation***
+
+***Model Evaluation***
+
+***Tuning and Improving the Model***
+
+***Final Model Performance***
+
+***Feature Selection***
 
 
-In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
 
 -----------
 
