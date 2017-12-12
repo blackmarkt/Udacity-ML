@@ -43,7 +43,7 @@ Data for this project will be pulled from various data API sources. The primary 
 <br>
 [Gold Futures](https://www.quandl.com/data/CHRIS/CME_GC1-Gold-Futures-Continuous-Contract-1-GC1-Front-Month)
 [M2 Money Supply (USD)](https://www.quandl.com/data/FRED/M2-M2-Money-Stock)
-Velocity of Money (USD):
+[Dollar Index](https://www.quandl.com/data/CHRIS/ICE_DX1-US-Dollar-Index-Futures-Continuous-Contract-1-DX1-Front-Month)
 
 ***St. Lious Fed (FRED)***
 <br>
@@ -53,13 +53,13 @@ Velocity of Money (USD):
 <br>
 [European Central Bank: Total Assets](https://fred.stlouisfed.org/series/ECBASSETS)
 <br>
+
+***Potential Additional Variables***
 <br>
 [Bitcoin trading volume breakdown:](http://data.bitcoinity.org/markets/volume/all?c=e&t=b)
 
 Exchange Rates/Currency Cross Pairs
 <br>
-
-[Dollar Index](https://www.quandl.com/data/CHRIS/ICE_DX1-US-Dollar-Index-Futures-Continuous-Contract-1-DX1-Front-Month)
 
 ### Solution Statement
 
@@ -108,7 +108,7 @@ For classification problems that are skewed in their classification distribution
 
 ***Data Preparation***
 <br>
-We will first organize the all the data from the sources mentioned. After all the data has been imported and collected some data exploratory analysis will be performed to detect any data that needs to be cleaned (i.e. NA's missing data) or if any variables need to be noramlized and convert any non-numeric variables into categorial dummy variables through the one-hot encoding process. The dependent variable (output) is then separated from the independent variables (input) variables. Once separated the dependent variable will need to be converted into a binary outcome (1 for "up" and 0 for "down").
+The first step is to import all the data from their respective API's or loaded locally. After all the data has been imported and collected some data exploratory analysis will be performed to detect any data that needs to be cleaned (i.e. NA's missing data) or if any variables need to be noramlized and convert any non-numeric variables into categorial dummy variables through the one-hot encoding process. The dependent variable (output) is then separated from the independent variables (input) variables. Once separated the dependent variable will need to be converted into a binary outcome (1 for "up" and 0 for "down").
 
 ***Model Selections and Implementation***
 <br> 
@@ -124,7 +124,7 @@ Luckily there are a nice selection of Supervised Learning models at our disposab
 
 ***Model Implentation***
 <br>
-During the model implementation phase the data is broken up into a training and a test set. The models learn from the training set and tests it's predictions on the testing set.
+During the model implementation phase the data is broken up into a training and a test set. The chosen models learn from the training set and tests it's predictions on the testing set.
 
 - Import `fbeta_score` and `accuracy_score` from [`sklearn.metrics`](http://scikit-learn.org/stable/modules/classes.html#sklearn-metrics-metrics).
  - Fit the learner to the sampled training data and record the training time.
@@ -138,7 +138,7 @@ And the winner is... here each model's f-beta score will be calculated and compa
 
 ***Tuning and Improving the Model***
 <br>
-In an effort to fine tune our winning model using grid search (GridSearchCV) with at least one important parameter tuned with at least 3 different values
+In an effort to fine tune the parameters of the winning model grid search (GridSearchCV) will be employed. Using a parameter optimizer like scikitlearn's GridSearchCV will facilitate a better understanding of how the features affect or influence the decision boundary produced by the model. 
 
 ***Final Model Performance***
 <br>
