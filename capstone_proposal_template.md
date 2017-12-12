@@ -82,7 +82,9 @@ _(approx. 1-2 paragraphs)_
 
 ***Precision, Recall, Accuracy***
 <br>
+<br>
 **Accuracy** measures how often the classifier makes the correct prediction. It’s the ratio of the number of correct predictions to the total number of predictions (the number of test data points).
+<br>
 <br>
 **Precision** tells us what proportion of messages we classified as spam, actually were spam.
 It is a ratio of true positives(words classified as spam, and which are actually spam) to all positives(all words classified as spam, irrespective of whether that was the correct classificatio), in other words it is the ratio of
