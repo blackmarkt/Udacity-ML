@@ -53,8 +53,7 @@ Velocity of Money (USD):
 [European Central Bank: Total Assets](https://fred.stlouisfed.org/series/ECBASSETS)
 <br>
 <br>
-Bitcoin trading volume breakdown:
-http://data.bitcoinity.org/markets/volume/all?c=e&t=b
+[Bitcoin trading volume breakdown:](http://data.bitcoinity.org/markets/volume/all?c=e&t=b)
 
 Exchange Rates/Currency Cross Pairs
 [Dollar Index](https://www.quandl.com/data/CHRIS/ICE_DX1-US-Dollar-Index-Futures-Continuous-Contract-1-DX1-Front-Month)
