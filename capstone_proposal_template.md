@@ -110,15 +110,11 @@ For classification problems that are skewed in their classification distribution
 
 ***Data Preparation***
 <br>
-We will first organize the all the data from the sources mentioned. After all the data has been imported and collected some data exploratory analysis will be performed to detect any data that needs to be cleaned (i.e. NA's missing data) or if any variables need to be noramlized and convert any non-numeric variables into categorial dummy variables through the one-hot encoding process. After all the data has been properly prepared comes the process of splitting the data into a training and testing set. 
-
-***Setting a Benchmark***
-<br>
-
+We will first organize the all the data from the sources mentioned. After all the data has been imported and collected some data exploratory analysis will be performed to detect any data that needs to be cleaned (i.e. NA's missing data) or if any variables need to be noramlized and convert any non-numeric variables into categorial dummy variables through the one-hot encoding process. The dependent variable (output) is then separated from the independent variables (input) variables.
 
 ***Model Selections and Implementation***
 <br> 
-Luckily there are a nice selection of Supervised Learning models at our disposable:
+Luckily there are a nice selection of Supervised Learning models at our disposable and we will select at least 3 different models from the list below:
 
 - Gaussian Naive Bayes (GaussianNB)
 - Decision Trees
@@ -130,15 +126,29 @@ Luckily there are a nice selection of Supervised Learning models at our disposab
 
 ***Model Implentation***
 <br>
-First mporting the accuracy_score and fbeta_score from the sklearn.metrics package, 
+During the model implementation phase the data is broken up into a training and a test set. The models learn from the training set and tests it's predictions on the testing set.
+
+- Import `fbeta_score` and `accuracy_score` from [`sklearn.metrics`](http://scikit-learn.org/stable/modules/classes.html#sklearn-metrics-metrics).
+ - Fit the learner to the sampled training data and record the training time.
+ - Perform predictions on the test data `X_test`, and also on the first 300 training points `X_train[:300]`.
+ - Calculate the accuracy score for both the training subset and testing set.
+ - Calculate the F-score for both the training subset and testing set.
+
 ***Model Evaluation***
 <br>
+And the winner is... here each model's f-beta score will be calculated and compared against the other models in order to ascertain which model performed the best.
+
 ***Tuning and Improving the Model***
 <br>
+In an effort to fine tune our winning model using grid search (GridSearchCV) with at least one important parameter tuned with at least 3 different values
+
 ***Final Model Performance***
 <br>
-***Feature Selection***
-<br>
+<img src="images/model_results.png" width="300"/>
+
+Now that the final results have been tabulated a final performance summary report will summarize the key metrics of the best performing model and offer areas of improvement.
+
+In addition some of the key features with the most predictive power will be explored in order to better understand their relationship wtih the target label. During this distillation process each selected features relevance will be assessed. Once the most significant features have been identified the winning model will be trained on this smaller feature subspace. This will simplify the model without hopefully compromising performance. After the smaller features subspace has been evaluated a comparison of the full set of features against the small subset of key features will be made.
 
 
 -----------
