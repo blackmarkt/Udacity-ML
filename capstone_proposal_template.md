@@ -16,20 +16,17 @@ Bitcoin is a cryptocurrency that was designed as a digital payments processing s
 <img src="images/bitcoin_price_up.jpg" width="300"/>
 
 Is Bitcoin a "bubble"? Is it here to stay? Will global Central Banks and governments wipe out Bitcoin holders? These are the central questions that plague crytocurrencies today in their nascent stage. These questions are central for investors and potential investors who are trying to assess the long-term structural risks inherent in new asset classes. 
- 
-Misc Ideas:
-Silk Road
 
 ### Problem Statement
 <img src="images/money_machine.jpg" width="300"/>
 
-Much of finance and trading in particular is motivated by the crusade to find the next money machine and trading is no exception. So from a trading standpoint the above questions are not as interesting as trying to determine whether shorter-term opportunities exist in the price movements of assets. This proposal is concerned with the questions:
+Much of finance and trading in particular is motivated by the crusade to find the next money machine and trading is no exception. So from a trading standpoint the above questions are not as interesting as trying to determine whether shorter-term opportunities exist in the price fluctuations of assets. This proposal is concerned with the questions:
 <br><br>
 ***Is the price of Bitcoin predictable using a single or multiple factor model?*** 
 <br><br>
 ***Can we use Machine Learning techniques to aid us in understanding and possibly forecasting the price of cryptocurrencies*** 
 
-In financial markets trying to understand and predict the price of assets is the name of the game and the introduction of a volatile instrument like Bitcoin presents opportunity as well as excitement for traders. The report will explore the underlying potential factors that govern Bitcoin's price movements. Once we have identified the factors that exert the most influence we will try to train Machine Learning models that attempt to predict whether the tomorrow's price will be higher "up" or "down" lower than the previous day's closing price. In order to determine whether our model adds any informtional value we will compare our results against the  "coin flip test" with a benchmark of 50% or simply guessing.
+In financial markets trying to understand and predict the price of assets is the name of the game and the introduction of a volatile instrument like Bitcoin presents opportunity as well as excitement for traders. The report will explore the underlying potential factors that govern Bitcoin's price movements. Once we have identified the factors that exert the most influence we will try to train Machine Learning models that attempt to predict whether tomorrow's price will be higher "up" or "down" lower than the previous day's closing price. 
 
 ### Datasets and Inputs
 
@@ -63,15 +60,16 @@ Exchange Rates/Currency Cross Pairs
 
 ### Solution Statement
 
-In order to solve the problem(s) proposed above we must test various macro economic variables that may exhibit some colinearity with the price of Bitcoin. We will first look at assets or variables that would intuitively be correlated to the price of bitcoin like other alternative stores of money (i.e. gold) to currencies (i.e. USD) to monetary indicators like "total assets" owned by the individual Central Banks of the developed world and the collective "total assets" by all 3. Once we have settled on a set of independent variables we can then train various models and test our model(s) on cross validated datasets. At the end of the day our model will be evaluated on their f-beta score.
+In order to solve the problem(s) proposed above various macro economic variables must be tested to determine if any exhibit some colinearity with the price of Bitcoin. This proposal will focus on fundamental asset data that are intuitively correlated to the price of bitcoin like other alternative stores of money (i.e. gold) to currencies (i.e. USD) to monetary indicators like "total assets" owned by the individual Central Banks of the developed world and the collective "total assets" by all 3. Once all the data has been properly vetted and prepared the separation of training and testing sets takes place. Then each model is trained, tested and evaluated according to their f-beta score.
 
 ### Benchmark Model
 _(approximately 1-2 paragraphs)_
 
 <img src="images/5050coin.jpg" width="300"/>
 
-As mentioned above our baseline benchmark will be a 50/50 coin flip. We will build from there by testing various Supervised Learning models (listed in the Project Design) in order to discover which model or models perform best on the test set.  
+As mentioned above our baseline benchmark will be a 50/50 coin flip. We will build from there by testing various Supervised Learning models (listed in the Project Design) in order to discover which model or models perform best on the test set. 
 
+Following the coin flip bar models will be ranked according to their the evaluation criteria outlined below.
 
 ### Evaluation Metrics
 
@@ -99,8 +97,6 @@ It is a ratio of true positives(words classified as up, and which are actually u
 
 <img src="images/recall.png" width="300"/>
 <br>
-
-For classification problems that are skewed in their classification distributions like in our case, for example if we had a 100 text messages and only 2 were spam and the rest 98 weren't, accuracy by itself is not a very good metric. We could classify 90 messages as not spam(including the 2 that were spam but we classify them as not spam, hence they would be false negatives) and 10 as spam(all 10 false positives) and still get a reasonably good accuracy score. For such cases, precision and recall come in very handy. These two metrics can be combined to get the F1 score, which is weighted average(harmonic mean) of the precision and recall scores. This score can range from 0 to 1, with 1 being the best possible F1 score(we take the harmonic mean as we are dealing with ratios).
 
 ### Project Design
 
