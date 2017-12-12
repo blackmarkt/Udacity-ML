@@ -87,15 +87,20 @@ As mentioned above our baseline benchmark will be a 50/50 coin flip. We will bui
 **Accuracy** measures how often the classifier makes the correct prediction. It’s the ratio of the number of correct predictions to the total number of predictions (the number of test data points).
 <br>
 <br>
+<img src="images/accuracy.png" width="300"/>
+
 **Precision** tells us what proportion of forecasts we classified as up, actually were up.
 It is a ratio of true positives(words classified as up, and which are actually up) to all positives(all words classified as up, irrespective of whether that was the correct classification), in other words it is the ratio of
 
-`[True Positives/(True Positives + False Positives)]`
+<img src="images/precision.png" width="300"/>
+<br>
+
 
 **Recall(sensitivity)** tells us what proportion of forecasts that actually were up were classified by us as up.
 It is a ratio of true positives(words classified as up, and which are actually up) to all the words that were actually up, in other words it is the ratio of
 
-`[True Positives/(True Positives + False Negatives)]`
+<img src="images/recall.png" width="300"/>
+<br>
 
 For classification problems that are skewed in their classification distributions like in our case, for example if we had a 100 text messages and only 2 were spam and the rest 98 weren't, accuracy by itself is not a very good metric. We could classify 90 messages as not spam(including the 2 that were spam but we classify them as not spam, hence they would be false negatives) and 10 as spam(all 10 false positives) and still get a reasonably good accuracy score. For such cases, precision and recall come in very handy. These two metrics can be combined to get the F1 score, which is weighted average(harmonic mean) of the precision and recall scores. This score can range from 0 to 1, with 1 being the best possible F1 score(we take the harmonic mean as we are dealing with ratios).
 
@@ -125,6 +130,7 @@ Luckily there are a nice selection of Supervised Learning models at our disposab
 
 ***Model Implentation***
 <br>
+First mporting the accuracy_score and fbeta_score from the sklearn.metrics package, 
 ***Model Evaluation***
 <br>
 ***Tuning and Improving the Model***
