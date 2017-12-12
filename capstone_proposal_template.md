@@ -76,7 +76,8 @@ As mentioned above our baseline benchmark will be a 50/50 coin flip. We will bui
 
 
 ### Evaluation Metrics
-_(approx. 1-2 paragraphs)_
+
+***F-beta Score***
 
 <img src="images/fbeta.png" width="300"/>
 
@@ -86,13 +87,13 @@ _(approx. 1-2 paragraphs)_
 **Accuracy** measures how often the classifier makes the correct prediction. It’s the ratio of the number of correct predictions to the total number of predictions (the number of test data points).
 <br>
 <br>
-**Precision** tells us what proportion of messages we classified as spam, actually were spam.
-It is a ratio of true positives(words classified as spam, and which are actually spam) to all positives(all words classified as spam, irrespective of whether that was the correct classificatio), in other words it is the ratio of
+**Precision** tells us what proportion of forecasts we classified as up, actually were up.
+It is a ratio of true positives(words classified as up, and which are actually up) to all positives(all words classified as up, irrespective of whether that was the correct classification), in other words it is the ratio of
 
 `[True Positives/(True Positives + False Positives)]`
 
-**Recall(sensitivity)** tells us what proportion of messages that actually were spam were classified by us as spam.
-It is a ratio of true positives(words classified as spam, and which are actually spam) to all the words that were actually spam, in other words it is the ratio of
+**Recall(sensitivity)** tells us what proportion of forecasts that actually were up were classified by us as up.
+It is a ratio of true positives(words classified as up, and which are actually up) to all the words that were actually up, in other words it is the ratio of
 
 `[True Positives/(True Positives + False Negatives)]`
 
@@ -103,13 +104,15 @@ For classification problems that are skewed in their classification distribution
 <img src="images/architects.jpg" width="300"/>
 
 ***Data Preparation***
+<br>
 We will first organize the all the data from the sources mentioned. After all the data has been imported and collected some data exploratory analysis will be performed to detect any data that needs to be cleaned (i.e. NA's missing data) or if any variables need to be noramlized and convert any non-numeric variables into categorial dummy variables through the one-hot encoding process. After all the data has been properly prepared comes the process of splitting the data into a training and testing set. 
 
-***Naive Predictor Performance***
+***Setting a Benchmark***
+<br>
 
 
 ***Model Selections and Implementation***
- 
+<br> 
 Luckily there are a nice selection of Supervised Learning models at our disposable:
 
 - Gaussian Naive Bayes (GaussianNB)
@@ -121,15 +124,15 @@ Luckily there are a nice selection of Supervised Learning models at our disposab
 - Logistic Regression
 
 ***Model Implentation***
-
+<br>
 ***Model Evaluation***
-
+<br>
 ***Tuning and Improving the Model***
-
+<br>
 ***Final Model Performance***
-
+<br>
 ***Feature Selection***
-
+<br>
 
 
 -----------
