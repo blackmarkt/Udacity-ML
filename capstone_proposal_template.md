@@ -5,7 +5,7 @@ Mark Black
 
 <img src="images/bitcoin.png" width="300"/>
 
-## Is Bitcoin Price Predictable? ## 
+## Is the Price of Bitcoin caused by the loose Monetary Policies of Global Central Banks? ## 
 
 ### Domain Background
 
@@ -23,7 +23,7 @@ Is Bitcoin a "bubble"? Is it here to stay? Will global Central Banks and governm
 
 Much of finance and trading in particular is motivated by the crusade to find the next money machine and trading is no exception. So from a trading standpoint the above questions are not as interesting as trying to determine whether shorter-term opportunities exist in the price fluctuations of assets. This proposal is concerned with the questions:
 <br><br>
-***Is the price of Bitcoin predictable using a single or multiple factor model?*** 
+***Is the meteoric rise strongly influenced by the increase by the assets held by the global central banks?*** 
 <br><br>
 ***Can we use Machine Learning techniques to aid us in understanding and possibly forecasting the price of cryptocurrencies*** 
 
@@ -40,7 +40,9 @@ Data for this project will be pulled from various data API sources. The primary 
 [Bitcoin daily price bitstampUSD](https://www.quandl.com/data/BCHARTS/BITSTAMPUSD-Bitcoin-Markets-bitstampUSD) 
 <br>
 [Gold Futures](https://www.quandl.com/data/CHRIS/CME_GC1-Gold-Futures-Continuous-Contract-1-GC1-Front-Month)
+<br>
 [M2 Money Supply (USD)](https://www.quandl.com/data/FRED/M2-M2-Money-Stock)
+<br>
 [Dollar Index](https://www.quandl.com/data/CHRIS/ICE_DX1-US-Dollar-Index-Futures-Continuous-Contract-1-DX1-Front-Month)
 
 ***St. Lious Fed (FRED)***
