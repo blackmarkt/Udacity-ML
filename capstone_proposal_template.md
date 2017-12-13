@@ -5,7 +5,7 @@ Mark Black
 
 <img src="images/bitcoin.png" width="300"/>
 
-## Is the Price of Bitcoin Predictable using ? ## 
+## Is the Price of Bitcoin Predictable using a Combination of Volume, Volatility or the Bid/Ask Spread? ## 
 
 ### Domain Background
 
@@ -23,9 +23,11 @@ Is Bitcoin a "bubble"(4)? Is it here to stay? Will global Central Banks and gove
 
 Much of finance and trading is motivated by the crusade to find the next money machine and at the moment much of finance is focused on trying to understand and therefore predict the general direction of Bitcoin's price. This proposal is concerned with the questions:
 <br><br>
-***Can we use Machine Learning techniques to aid us in understanding and possibly forecasting the price of cryptocurrencies*** 
+***Can we use Machine Learning Classification Models to aid us in understanding and possibly forecasting the price of Bitcoin using Volume, Volatility, Bid/Ask Spread or a combination?*** 
 
-This report will explore a few underlying potential factors such as that govern Bitcoin's price movements. Once we have identified the factors that exert the most influence we will try to train Machine Learning models that attempt to predict whether tomorrow's price will be higher "up" or "down" lower than the previous day's closing price. The best model for predicting a binary outcome is a classification algorithm and there are wide variety of different machine learning models at our disposal.
+While it may be tempting to create a simple trading simulator this proposal will not attempt to delve into the viability of using Machine Learning models in terms of a trading environment. The primary focus of the report is to only will be to explore a few underlying potential factors that govern Bitcoin's price movements. Once we have identified the factors that exert the most influence we will try to train Machine Learning models that attempt to predict whether tomorrow's price will be higher "up" or "down" lower than the previous day's closing price. The best model for predicting a binary outcome is a classification algorithm and there are wide variety of different machine learning models at our disposal.
+
+ 
 
 ### Datasets and Inputs
 
@@ -36,28 +38,17 @@ Data for this project will be pulled from various data API sources. The primary 
 ***Quandl:***
 <br>
 [Bitcoin daily price bitstampUSD](https://www.quandl.com/data/BCHARTS/BITSTAMPUSD-Bitcoin-Markets-bitstampUSD) 
-<br>
-[Gold Futures](https://www.quandl.com/data/CHRIS/CME_GC1-Gold-Futures-Continuous-Contract-1-GC1-Front-Month)
-<br>
-[M2 Money Supply (USD)](https://www.quandl.com/data/FRED/M2-M2-Money-Stock)
-<br>
-[Dollar Index](https://www.quandl.com/data/CHRIS/ICE_DX1-US-Dollar-Index-Futures-Continuous-Contract-1-DX1-Front-Month)
 
-***St. Lious Fed (FRED)***
+***Bitcoin***
 <br>
-[Federal Reserve: Total Assets](https://fred.stlouisfed.org/series/WALCL)
-<br>
-[Bank of Japan: Total Assets](https://fred.stlouisfed.org/series/JPNASSETS)
-<br>
-[European Central Bank: Total Assets](https://fred.stlouisfed.org/series/ECBASSETS)
-<br>
+[Bitcoin Data:](https://data.bitcoinity.org)
 
-***Potential Additional Variables***
-<br>
-[Bitcoin trading volume breakdown:](http://data.bitcoinity.org/markets/volume/all?c=e&t=b)
+The 3 dependent features that will be used have been downloaded and extracted from the website data.bitcoinity.org. 
 
-Exchange Rates/Currency Cross Pairs
+Dataset Decomposition
 <br>
+- continuous variables
+- The data will be broken into Training Set/Testing Set: 80%/20%
 
 ### Solution Statement
 
@@ -121,7 +112,7 @@ Luckily there are a nice selection of Supervised Learning models at our disposab
 
 ***Model Implentation***
 <br>
-During the model implementation phase the data is broken up into a training and a test set. The chosen models learn from the training set and tests it's predictions on the testing set.
+During the model implementation phase the data is broken up with 80% training and 20% test set. The chosen models learn from the training set and tests it's predictions on the testing set.
 
 - Import `fbeta_score` and `accuracy_score` from [`sklearn.metrics`](http://scikit-learn.org/stable/modules/classes.html#sklearn-metrics-metrics).
  - Fit the learner to the sampled training data and record the training time.
