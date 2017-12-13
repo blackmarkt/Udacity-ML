@@ -5,7 +5,7 @@ Mark Black
 
 <img src="images/bitcoin.png" width="300"/>
 
-## Is the Price of Bitcoin caused by the loose Monetary Policies of Global Central Banks? ## 
+## Is the Price of Bitcoin Predictable using ? ## 
 
 ### Domain Background
 
@@ -16,18 +16,16 @@ Bitcoin is a cryptocurrency that was designed as a digital payments processing s
 
 There has been a lot of research dedicated to deciphering Bitcoin's price and trying to predict it's future value. Some interesting work has been done in trying to use sentiment analysis from social media as a predictive feature(2). Other studies have been devoted towards looking at possible tells in the technical indicators like volume or change in volume as a forecasting mechanism(3). Some research has attempted to dissect the historical context surrounding Bitcoin's rise from the underlying motivations of different "agents" (i.e. traders and non-traders) to the different financial market regimes since 2009(3).
 
-Is Bitcoin a "bubble"? Is it here to stay? Will global Central Banks and governments wipe out Bitcoin holders? These are the central questions that plague crytocurrencies today in their nascent stage. These questions are central for investors and potential investors who are trying to assess the long-term structural risks inherent in new asset classes. 
+Is Bitcoin a "bubble"(4)? Is it here to stay? Will global Central Banks and governments wipe out Bitcoin holders? These are the central questions that plague crytocurrencies today in their nascent stage. These questions are central for investors and potential investors who are trying to assess the long-term structural risks inherent in new asset classes. 
 
 ### Problem Statement
 <img src="images/money_machine.jpg" width="300"/>
 
-Much of finance and trading in particular is motivated by the crusade to find the next money machine and trading is no exception. So from a trading standpoint the above questions are not as interesting as trying to determine whether shorter-term opportunities exist in the price fluctuations of assets. This proposal is concerned with the questions:
-<br><br>
-***Is the meteoric rise strongly influenced by the increase by the assets held by the global central banks?*** 
+Much of finance and trading is motivated by the crusade to find the next money machine and at the moment much of finance is focused on trying to understand and therefore predict the general direction of Bitcoin's price. This proposal is concerned with the questions:
 <br><br>
 ***Can we use Machine Learning techniques to aid us in understanding and possibly forecasting the price of cryptocurrencies*** 
 
-In financial markets trying to understand and predict the price of assets is the name of the game and the introduction of a volatile instrument like Bitcoin presents opportunity as well as excitement for traders. The report will explore the underlying potential factors such as that govern Bitcoin's price movements. Once we have identified the factors that exert the most influence we will try to train Machine Learning models that attempt to predict whether tomorrow's price will be higher "up" or "down" lower than the previous day's closing price. The best model for predicting a binary outcome is a classification algorithm and there are wide variety of different machine learning models at our disposal.
+This report will explore a few underlying potential factors such as that govern Bitcoin's price movements. Once we have identified the factors that exert the most influence we will try to train Machine Learning models that attempt to predict whether tomorrow's price will be higher "up" or "down" lower than the previous day's closing price. The best model for predicting a binary outcome is a classification algorithm and there are wide variety of different machine learning models at our disposal.
 
 ### Datasets and Inputs
 
@@ -157,4 +155,6 @@ References:
 (2)[Can Volume Predict Bitcoin Returns and Volatility? A Quantiles-Based Approach](https://poseidon01.ssrn.com/delivery.php?ID=679064026081103078116107114017112078003010031014027056097107102011066114109071073068007100042121052122038095104004097122101106028042064064059127076021101095097005004018008075068009089064023108021085084125066117065107113028094007064026125117127091004094&EXT=pdf)
 <br>
 (3)[A modelling of bitcoin price dynamics by the artificial market algorithm](https://poseidon01.ssrn.com/delivery.php?ID=313027093103007071100088092106067095029078064077029082029098017075114103102016007103006022018042109022044118085029086106029109006076043087080124006114023119080006099010045062064030088081120019123068119006126071121099016113101080115098096088006126003031&EXT=pdf)
+<br>
+[It's Official: Bitcoin Surpasses "Tulip Mania", Is Now The Biggest Bubble In World History](http://www.zerohedge.com/news/2017-12-12/its-official-bitcoin-surpasses-tulip-mania-now-biggest-bubble-world-history)
 <br>
