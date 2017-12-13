@@ -14,7 +14,7 @@ Bitcoin is a cryptocurrency that was designed as a digital payments processing s
 
 <img src="images/bitcoin_price_up.jpg" width="300"/>
 
-There has been a lot of research dedicated to deciphering Bitcoin's price and trying to predict it's future value. Some interesting work has been done in trying to use sentiment analysis from social media as a predictive feature(2). Other studies have been devoted towards looking at possible tells in the technical indicators like volume or change in volume as a forecasting mechanism(3).
+There has been a lot of research dedicated to deciphering Bitcoin's price and trying to predict it's future value. Some interesting work has been done in trying to use sentiment analysis from social media as a predictive feature(2). Other studies have been devoted towards looking at possible tells in the technical indicators like volume or change in volume as a forecasting mechanism(3). Some research has attempted to dissect the historical context surrounding Bitcoin's rise from the underlying motivations of different "agents" (i.e. traders and non-traders) to the different financial market regimes since 2009(3).
 
 Is Bitcoin a "bubble"? Is it here to stay? Will global Central Banks and governments wipe out Bitcoin holders? These are the central questions that plague crytocurrencies today in their nascent stage. These questions are central for investors and potential investors who are trying to assess the long-term structural risks inherent in new asset classes. 
 
@@ -154,5 +154,5 @@ References:
 <br>
 (2)[Can Volume Predict Bitcoin Returns and Volatility? A Quantiles-Based Approach](https://poseidon01.ssrn.com/delivery.php?ID=679064026081103078116107114017112078003010031014027056097107102011066114109071073068007100042121052122038095104004097122101106028042064064059127076021101095097005004018008075068009089064023108021085084125066117065107113028094007064026125117127091004094&EXT=pdf)
 <br>
-
+(3)[A modelling of bitcoin price dynamics by the artificial market algorithm](https://poseidon01.ssrn.com/delivery.php?ID=313027093103007071100088092106067095029078064077029082029098017075114103102016007103006022018042109022044118085029086106029109006076043087080124006114023119080006099010045062064030088081120019123068119006126071121099016113101080115098096088006126003031&EXT=pdf)
 <br>
