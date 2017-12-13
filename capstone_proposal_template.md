@@ -9,7 +9,6 @@ Mark Black
 
 ### Domain Background
 
-
 ***What is a Bitcoin?***
 Bitcoin is a cryptocurrency that was designed as a digital payments processing system that relies on crytography in order to secure transactions. There is much mythology built around Bitcoin's creation and it's creator Satoshi Nakamoto who in late 2008 authored the white paper "Bitcoin: A Peer-to-Peer Electronic Cash System"(1). Bitcoin's technological revolution is it's blockchain technology where all transactions including the creation of new bitcoins are stored and verified. Since 2008 countless cryptocurrencies known as [Altcoins](http://www.businessinsider.com/list-top-cryptocurrencies-analysis-comparison-2017-10) have emerged in the space such as Ethereum and Litecoin. Over the past couple of year Bitcoin has skyrocketed from obscurity into mainstream as it's price continues it's meteoric rise with many calling this rapid ascension a "bubble". Recently the CBOE and CME offered Bitcoin futures for trading signally the cryptocurrecncy's legitimacy as an tradeable asset. 
 
@@ -28,7 +27,7 @@ Much of finance and trading in particular is motivated by the crusade to find th
 <br><br>
 ***Can we use Machine Learning techniques to aid us in understanding and possibly forecasting the price of cryptocurrencies*** 
 
-In financial markets trying to understand and predict the price of assets is the name of the game and the introduction of a volatile instrument like Bitcoin presents opportunity as well as excitement for traders. The report will explore the underlying potential factors that govern Bitcoin's price movements. Once we have identified the factors that exert the most influence we will try to train Machine Learning models that attempt to predict whether tomorrow's price will be higher "up" or "down" lower than the previous day's closing price. 
+In financial markets trying to understand and predict the price of assets is the name of the game and the introduction of a volatile instrument like Bitcoin presents opportunity as well as excitement for traders. The report will explore the underlying potential factors such as that govern Bitcoin's price movements. Once we have identified the factors that exert the most influence we will try to train Machine Learning models that attempt to predict whether tomorrow's price will be higher "up" or "down" lower than the previous day's closing price. The best model for predicting a binary outcome is a classification algorithm and there are wide variety of different machine learning models at our disposal.
 
 ### Datasets and Inputs
 
