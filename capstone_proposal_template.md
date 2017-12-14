@@ -10,28 +10,29 @@ Mark Black
 ### Domain Background
 
 ***What is a Bitcoin?***
+<br>
 Bitcoin is a cryptocurrency that was designed as a digital payments processing system that relies on crytography in order to secure transactions. There is much mythology built around Bitcoin's creation and it's creator Satoshi Nakamoto who in late 2008 authored the white paper "Bitcoin: A Peer-to-Peer Electronic Cash System"(1). Bitcoin's technological revolution is it's blockchain technology where all transactions including the creation of new bitcoins are stored and verified. Since 2008 countless cryptocurrencies known as [Altcoins](http://www.businessinsider.com/list-top-cryptocurrencies-analysis-comparison-2017-10) have emerged in the space such as Ethereum and Litecoin. Over the past couple of year Bitcoin has skyrocketed from obscurity into mainstream as it's price continues it's meteoric rise with many calling this rapid ascension a "bubble". Recently the CBOE and CME offered Bitcoin futures for trading signally the cryptocurrecncy's legitimacy as an tradeable asset. 
+
+Is Bitcoin a "bubble"(4)? Is it here to stay? Will global Central Banks and governments wipe out Bitcoin holders? These are the central questions that plague crytocurrencies today in their nascent stage. These questions are central for investors and potential investors who are trying to assess the long-term structural risks inherent in new asset classes. 
 
 <img src="images/bitcoin_price_up.jpg" width="300"/>
 
-There has been a lot of research dedicated to deciphering Bitcoin's price and trying to predict it's future value. Some interesting work has been done in trying to use sentiment analysis from social media as a predictive feature(2). Other studies have been devoted towards looking at possible tells in the technical indicators like volume or change in volume as a forecasting mechanism(3). Some research has attempted to dissect the historical context surrounding Bitcoin's rise from the underlying motivations of different "agents" (i.e. traders and non-traders) to the different financial market regimes since 2009(3).
-
-Is Bitcoin a "bubble"(4)? Is it here to stay? Will global Central Banks and governments wipe out Bitcoin holders? These are the central questions that plague crytocurrencies today in their nascent stage. These questions are central for investors and potential investors who are trying to assess the long-term structural risks inherent in new asset classes. 
+There has been a lot of research dedicated to deciphering Bitcoin's price and trying to predict it's future value. Some interesting work has been done in trying to use sentiment analysis from social media as a predictive feature(2). Other studies have been devoted towards looking at possible tells in the technical indicators like volume or change in volume as a forecasting mechanism(3). Some research has attempted to dissect the historical context surrounding Bitcoin's rise from the underlying motivations of different "agents" (i.e. traders and non-traders) to the different financial market regimes since 2009(3). The motivation behind this proposal is a simplified version of this research paper(5) that tests whether machine learning algorithm given 16 key Bitcoin indicators can be used to predict the future price of Bitcoin.
 
 ### Problem Statement
 <img src="images/money_machine.jpg" width="300"/>
 
 Much of finance and trading is motivated by the crusade to find the next money machine and at the moment much of finance is focused on trying to understand and therefore predict the general direction of Bitcoin's price. This proposal is concerned with the questions:
 <br><br>
-***Can we use Machine Learning Classification Models to aid us in understanding and possibly forecasting the price of Bitcoin using Volume, Volatility, Bid/Ask Spread or a combination?*** 
+***Can we use Machine Learning Classification Models to aid us in understanding and possibly forecasting the price of Bitcoin using Volume, Volatility, Bid/Ask Spread, or a combination?*** 
 
-While it may be tempting to create a simple trading simulator this proposal will not attempt to delve into the viability of using Machine Learning models in terms of a trading environment. The primary focus of the report is to only will be to explore a few underlying potential factors that govern Bitcoin's price movements. Once we have identified the factors that exert the most influence we will try to train Machine Learning models that attempt to predict whether tomorrow's price will be higher "up" or "down" lower than the previous day's closing price. The best model for predicting a binary outcome is a classification algorithm and there are wide variety of different machine learning models at our disposal.
+While it may be tempting to create a simple trading simulator this proposal will not attempt to delve into the viability of using Machine Learning models in terms of a trading environment. The primary focus of the report is to only will be to explore a few underlying potential factors that govern Bitcoin's price movements. The input features we will be looking at are daily: Trading Volume, Volatility, Bid/Ask Spread ratio, Hashrate, Mining Difficulty, Market Cap, Block Size, Time Between Blocks and Number of Transactions. 
 
+These input features will be used to train Machine Learning models that attempt to predict whether tomorrow's price will be higher "up" or "down" lower than the previous day's closing price. The best model for predicting a binary outcome is a classification algorithm and there are wide variety of different machine learning models at our disposal.
  
-
 ### Datasets and Inputs
 
-Data for this project will be pulled from various data API sources. The primary source will be Quandl which offers mostly free economic and financial datasets, the St. Lious Federal Research database (FRED) and a few miscellaneous data sets pulled from a variety of sources.
+Data for this project will be pulled from various data API sources. The primary source will be Quandl which offers mostly free economic and financial datasets, the St. Lious Federal Research database (FRED) and a few miscellaneous data sets pulled from a variety of sources. The period or timeframe that will be used is daily.
 
 **Datasets**
 <br>
@@ -43,12 +44,27 @@ Data for this project will be pulled from various data API sources. The primary 
 <br>
 [Bitcoin Data:](https://data.bitcoinity.org)
 
-The 3 dependent features that will be used have been downloaded and extracted from the website data.bitcoinity.org. 
+Breakdown of the selected features:
 
-Dataset Decomposition
+Feature | Continuous or Categorial | Description
+--- | --- | ---
+Trading Volume | Continuous | Total Daily volume in USD from all exchanges
+Volaility | Continuous | Volatility is calculated as standard deviation from all market trades
+Bid/Ask Spread | Continuous | Average daily spread between the Bid and Ask
+Hashrate | Continuous | Average daily speed at which a computer is completing an operation in the Bitcoin code
+Mining Difficulty | Continuous | How difficult it is to find a new block
+Market Cap | Continuous | End of day total number of bitcoins times market value
+Block Size | Continuous | Average block size (MB)
+Time Between Blocks | Continuous | Average time to mine a block in minutes
+Number of Transactions | Continuous |  Total number of unique Bitcoin transactions per day
+
+***Dataset Decomposition***
 <br>
-- continuous variables
+
 - The data will be broken into Training Set/Testing Set: 80%/20%
+- The proposed date range will be between 01/01/2013-12/01/2017. These dates were mostly determined by the availability of data available.
+- The total number of data points will be 1796
+- The number of positive days ("up") is 1009 and the number of negative days ("down") is 787
 
 ### Solution Statement
 
@@ -59,7 +75,7 @@ _(approximately 1-2 paragraphs)_
 
 <img src="images/5050coin.jpg" width="300"/>
 
-As mentioned above our baseline benchmark will be a 50/50 coin flip. We will build from there by testing various Supervised Learning models (listed in the Project Design) in order to discover which model or models perform best on the test set. 
+
 
 Following the coin flip bar models will be ranked according to their the evaluation criteria outlined below.
 
@@ -147,5 +163,7 @@ References:
 <br>
 (3)[A modelling of bitcoin price dynamics by the artificial market algorithm](https://poseidon01.ssrn.com/delivery.php?ID=313027093103007071100088092106067095029078064077029082029098017075114103102016007103006022018042109022044118085029086106029109006076043087080124006114023119080006099010045062064030088081120019123068119006126071121099016113101080115098096088006126003031&EXT=pdf)
 <br>
-[It's Official: Bitcoin Surpasses "Tulip Mania", Is Now The Biggest Bubble In World History](http://www.zerohedge.com/news/2017-12-12/its-official-bitcoin-surpasses-tulip-mania-now-biggest-bubble-world-history)
+(4)[It's Official: Bitcoin Surpasses "Tulip Mania", Is Now The Biggest Bubble In World History](http://www.zerohedge.com/news/2017-12-12/its-official-bitcoin-surpasses-tulip-mania-now-biggest-bubble-world-history)
+<br>
+(5[Automated Bitcoin Trading via Machine Learning Algorithms](http://cs229.stanford.edu/proj2014/Isaac%20Madan,%20Shaurya%20Saluja,%20Aojia%20Zhao,Automated%20Bitcoin%20Trading%20via%20Machine%20Learning%20Algorithms.pdf)
 <br>
