@@ -36,10 +36,11 @@ Data for this project will be pulled from various data API sources. The primary 
 
 **Datasets**
 <br>
-***Quandl:***
+* Unfortunately the BTC dataset provided by Quandl cannot be used because there are missing values.
+~~***Quandl:***
 <br>
 [Bitcoin daily price bitstampUSD](https://www.quandl.com/data/BCHARTS/BITSTAMPUSD-Bitcoin-Markets-bitstampUSD) 
-
+~~
 ***Bitcoin***
 <br>
 [Bitcoin Data:](https://data.bitcoinity.org)
