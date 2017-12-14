@@ -37,17 +37,17 @@ Data for this project will be pulled from various data API sources. The primary 
 **Datasets**
 <br>
 * Unfortunately the BTC dataset provided by Quandl cannot be used because there are missing values.
-~~***Quandl:***
+***Quandl:***
 <br>
 [Bitcoin daily price bitstampUSD](https://www.quandl.com/data/BCHARTS/BITSTAMPUSD-Bitcoin-Markets-bitstampUSD) 
-~~
+<br><br>
 ***Bitcoin***
 <br>
 [Bitcoin Data:](https://data.bitcoinity.org)
 
 Breakdown of the selected features:
 
-Feature | Continuous or Categorial | Description
+Input Feature | Continuous or Categorial | Description
 --- | --- | ---
 Trading Volume | Continuous | Total Daily volume in USD from all exchanges
 Volaility | Continuous | Volatility is calculated as standard deviation from all market trades
@@ -58,6 +58,10 @@ Market Cap | Continuous | End of day total number of bitcoins times market value
 Block Size | Continuous | Average block size (MB)
 Time Between Blocks | Continuous | Average time to mine a block in minutes
 Number of Transactions | Continuous |  Total number of unique Bitcoin transactions per day
+
+Output Feature | Continuous or Categorial | Description
+--- | --- | ---
+Prie | Categorical | 1 if price change from previous day is positive and 0 for negative
 
 ***Dataset Decomposition***
 <br>
