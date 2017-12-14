@@ -41,7 +41,7 @@ Data for this project will be pulled from various data API sources. The primary 
 ***Bitcoin***
 <br>
 [Bitcoin Data:](https://data.bitcoinity.org)
-
+<br>
 Breakdown of the selected features:
 
 Input Feature | Continuous or Categorial | Description
@@ -58,7 +58,7 @@ Number of Transactions | Continuous |  Total number of unique Bitcoin transactio
 
 Output Feature | Continuous or Categorial | Description
 --- | --- | ---
-Prie | Categorical | 1 if price change from previous day is positive and 0 for negative
+Prie | Continuous | Average daily price across all available exchanges 
 
 ***Dataset Decomposition***
 <br>
@@ -67,10 +67,11 @@ Prie | Categorical | 1 if price change from previous day is positive and 0 for n
 - The proposed date range will be between 01/01/2013-12/01/2017. These dates were mostly determined by the availability of data available.
 - The total number of data points will be 1796
 - The number of positive days ("up") is 1009 and the number of negative days ("down") is 787
+- Output feature **price** will be converted to categorial with 1 for positive percent change from previous day and 0 for negative from previous day
 
 ### Solution Statement
 
-In order to solve the problem(s) proposed above various macro economic variables must be tested to determine if any exhibit some colinearity with the price of Bitcoin. This proposal will focus on fundamental asset data that are intuitively correlated to the price of bitcoin like other alternative stores of money (i.e. gold) to currencies (i.e. USD) to monetary indicators like "total assets" owned by the individual Central Banks of the developed world and the collective "total assets" by all 3. Once all the data has been properly vetted and prepared the separation of training and testing sets takes place. Then each model is trained, tested and evaluated according to their f-beta score.
+In order to solve the problem proposed above the aforementioned input features must be tested to determine if any exhibit some colinearity with the price of Bitcoin. This proposal will focus on trying to determine whether any of the technical indicators is correlated with predicting future Bitcoin price. Once all the data has been properly vetted and prepared the separation of training and testing sets takes place. Then each model is trained, tested and evaluated according to their f-beta score.
 
 ### Benchmark Model
 _(approximately 1-2 paragraphs)_
