@@ -75,9 +75,7 @@ _(approximately 1-2 paragraphs)_
 
 <img src="images/5050coin.jpg" width="300"/>
 
-
-
-Following the coin flip bar models will be ranked according to their the evaluation criteria outlined below.
+A Naive Bayes Predictor model will be used to set the benchmark. A Naive predictor(6) is simply used to show what a base model without any intelligence would look like. 
 
 ### Evaluation Metrics
 
@@ -167,3 +165,4 @@ References:
 <br>
 (5[Automated Bitcoin Trading via Machine Learning Algorithms](http://cs229.stanford.edu/proj2014/Isaac%20Madan,%20Shaurya%20Saluja,%20Aojia%20Zhao,Automated%20Bitcoin%20Trading%20via%20Machine%20Learning%20Algorithms.pdf)
 <br>
+(6)[Naive Bayes Classifier](http://www.statsoft.com/textbook/naive-bayes-classifier)
