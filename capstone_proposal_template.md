@@ -37,9 +37,9 @@ Data for this project will be pulled from various data API sources. The primary 
 **Datasets**
 <br>
 * Unfortunately the BTC dataset provided by **Quandl** cannot be used because there are missing values(7). 
-<br><br>
+<br>
 ***Bitcoin***
-<br><br>
+<br>
 [Bitcoin Data:](https://data.bitcoinity.org)
 
 Breakdown of the selected features:
@@ -168,4 +168,5 @@ References:
 (5[Automated Bitcoin Trading via Machine Learning Algorithms](http://cs229.stanford.edu/proj2014/Isaac%20Madan,%20Shaurya%20Saluja,%20Aojia%20Zhao,Automated%20Bitcoin%20Trading%20via%20Machine%20Learning%20Algorithms.pdf)
 <br>
 (6)[Naive Bayes Classifier](http://www.statsoft.com/textbook/naive-bayes-classifier)
+<br>
 (7)[Quandl BTC Price provided by Bitstamp](https://www.quandl.com/data/BCHARTS/BITSTAMPUSD-Bitcoin-Markets-bitstampUSD)
