@@ -37,7 +37,7 @@ Data for this project will be pulled from various data API sources. The primary 
 **Datasets**
 <br>
 * Unfortunately the BTC dataset provided by **Quandl** cannot be used because there are missing values(7). 
-<br>
+
 ***Bitcoin***
 <br>
 
