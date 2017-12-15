@@ -42,6 +42,8 @@ Data for this project will be pulled from various data API sources. The primary 
 <br>
 
 [Bitcoin Data:](https://data.bitcoinity.org)
+<br>
+[Blockchain.info](https://blockchain.info/)
 <br><br>
 Breakdown of the selected features:
 <br>
