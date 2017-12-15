@@ -76,7 +76,6 @@ Prie | Continuous | Average daily price across all available exchanges
 In order to solve the problem proposed above the aforementioned input features must be tested to determine if any exhibit some colinearity with the price of Bitcoin. This proposal will focus on trying to determine whether any of the technical indicators is correlated with predicting future Bitcoin price. Once all the data has been properly vetted and prepared the separation of training and testing sets takes place. Then each model is trained, tested and evaluated according to their f-beta score.
 
 ### Benchmark Model
-_(approximately 1-2 paragraphs)_
 
 <img src="images/5050coin.jpg" width="300"/>
 
