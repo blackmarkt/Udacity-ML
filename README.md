@@ -2,9 +2,9 @@
 
 ### Problem Statement
 ---
-This project will use a deep learning convolutional neural network to classify multi-digit number sequences.
+This project attempts to use Supervised Learning Classifier model to predict the price of Bitcoin.
 
-The project is a TensorFlow implementation of "Multi-digit Number Recognition from Street View Imagery using Deep Convolutional Neural Networks", available here
+The project takes historical data from certain Bitcoin indicators from 1/1/2013-12/1/2017 various Machine Learning models on historical daily 
 
 ### Dataset
 ---
