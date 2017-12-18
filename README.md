@@ -8,9 +8,12 @@ The project takes historical data from certain Bitcoin indicators from 1/1/2013-
 
 ### Dataset
 ---
-The dataset can be downloaded from The Street View House Numbers (SVHN) Dataset
+The dataset can be downloaded primarily from [Blockchain](https://blockchain.info/stats)
 
-Download train.tar.gz, test.tar.gz, and extra.tar.gz and extract into this folder.
+Download the various csv files for the following datasets: Volume, Volatility, Hash Rate, Mining Difficulty, Average Number of Transactions, Average Block Size, Market Capitalization, Bid/Ask Spread.
+
+Training set has 1436 samples.
+Testing set has 360 samples.
 
 ### Scripts
 ---
