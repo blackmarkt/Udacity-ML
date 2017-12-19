@@ -1,5 +1,6 @@
 # Machine Learning Engineer Nanodegree
 ## Capstone Project
+#### Predicting the Price of Bitcoin
 Mark Black
 <br>
 December 19th, 2017
@@ -128,6 +129,8 @@ In this section, you will need to provide discussion as to how one aspect of the
 - _Were there algorithms or techniques you researched that you did not know how to implement, but would consider using if you knew how?_
 - _If you used your final solution as the new benchmark, do you think an even better solution exists?_
 
+
+<<img src="report_images/bitcoin_price.jpg" width="300"/>
 -----------
 
 **Before submitting, ask yourself. . .**
