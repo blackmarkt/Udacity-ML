@@ -15,6 +15,10 @@ Download the various csv files for the following datasets: Volume, Volatility, H
 Training set has 1436 samples.
 Testing set has 360 samples.
 
+### Libraries
+
+The libraries used for this project are os, time, functools, numpy, pandas, matplotlib, a multiplicity of sklearn modules, 
+
 ### Scripts
 ---
 Several Python scripts are available to train the model:
