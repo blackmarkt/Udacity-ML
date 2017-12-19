@@ -1,6 +1,7 @@
 # Machine Learning Engineer Nanodegree
 ## Capstone Project
 Mark Black
+<br>
 December 19th, 2017
 
 ## I. Definition
@@ -10,6 +11,10 @@ _(approx. 1-2 pages)_
 In this section, look to provide a high-level overview of the project in layman’s terms. Questions to ask yourself when writing this section:
 - _Has an overview of the project been provided, such as the problem domain, project origin, and related datasets or input data?_
 - _Has enough background information been given so that an uninformed reader would understand the problem domain and following problem statement?_
+
+The field of finance is typically a stodgy industry where innovation is typically evolutionary rather than revolutionary. In the past few years the rapid rise in cryptocurrencies has ushered in a whole new digital financial ecosystem. Crytocurrencies have the potential to disrupt areas from payment processing to even how we think about physical versus virtual assets. Bitcoin mania has swept the world as the price of the cryptocurrency continues to skyrocket. 
+
+Finance professionals in particular Wall Street have typically relied heavily on Excel spreadsheets, Econometrics and linear regression models. The rise of Machine Learning somewhat parallels the ascent of cryptocurriences as the businesses rapidly adopt and adjust to the era of "Big Data". This project explores the potential that Supervised Machine Learning in trying to predict the future price of Bitcoin.  
 
 ### Problem Statement
 In this section, you will want to clearly define the problem that you are trying to solve, including the strategy (outline of tasks) you will use to achieve the desired solution. You should also thoroughly discuss what the intended solution will be for this problem. Questions to ask yourself when writing this section:
@@ -37,7 +42,7 @@ In this section, you will be expected to analyze the data you are using for the 
 ### Exploratory Visualization
 In this section, you will need to provide some form of visualization that summarizes or extracts a relevant characteristic or feature about the data. The visualization should adequately support the data being used. Discuss why this visualization was chosen and how it is relevant. Questions to ask yourself when writing this section:
 
-<<img src="report_images/general_plots.png" width="300"/>
+<<img src="report_images/general_plots.png" width="800"/>
 
 - _Have you visualized a relevant characteristic or feature about the dataset or input data?_
 - _Is the visualization thoroughly analyzed and discussed?_
