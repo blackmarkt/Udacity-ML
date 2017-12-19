@@ -6,9 +6,9 @@ This project attempts to use Supervised Learning Classifier model to predict the
 
 ### Dataset
 ---
-The dataset can be downloaded primarily from [Blockchain](https://blockchain.info/stats)
+The datasets used for this project can be downloaded from [Blockchain](https://blockchain.info/stats)
 
-Download the various csv files for the following datasets: Volume, Volatility, Hash Rate, Mining Difficulty, Average Number of Transactions, Average Block Size, Market Capitalization, Bid/Ask Spread.
+The following individual csv files were downloaded housing the datasets: Volume, Volatility, Hash Rate, Mining Difficulty, Average Number of Transactions, Average Block Size, Market Capitalization, Bid/Ask Spread.
 
 Training set has 1436 samples.
 Testing set has 360 samples.
