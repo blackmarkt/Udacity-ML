@@ -2,9 +2,7 @@
 
 ### Problem Statement
 ---
-This project attempts to use Supervised Learning Classifier model to predict the price of Bitcoin.
-
-The project takes historical data from certain Bitcoin indicators from 1/1/2013-12/1/2017 various Machine Learning models on historical daily 
+This project attempts to use Supervised Learning Classifier model to predict the price of Bitcoin. 
 
 ### Dataset
 ---
