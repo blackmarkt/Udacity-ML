@@ -3,6 +3,7 @@
 Mark Black
 <br>
 December 19th, 2017
+___
 
 ## I. Definition
 _(approx. 1-2 pages)_
@@ -16,6 +17,8 @@ The field of finance is typically a stodgy industry where innovation is typicall
 
 Finance professionals in particular Wall Street have typically relied heavily on Excel spreadsheets, Econometrics and linear regression models. The rise of Machine Learning somewhat parallels the ascent of cryptocurriences as the businesses rapidly adopt and adjust to the era of "Big Data". This project explores the potential that Supervised Machine Learning in trying to predict the future price of Bitcoin.  
 
+Even though it is still early innings there is already a ton of work being focused on trying to understand and predict the price of cryptoassets. Much of this project draws inspiration from the work <sup>1</sup>
+
 ### Problem Statement
 In this section, you will want to clearly define the problem that you are trying to solve, including the strategy (outline of tasks) you will use to achieve the desired solution. You should also thoroughly discuss what the intended solution will be for this problem. Questions to ask yourself when writing this section:
 - _Is the problem statement clearly defined? Will the reader understand what you are expecting to solve?_
@@ -27,6 +30,7 @@ In this section, you will need to clearly define the metrics or calculations you
 - _Are the metrics you’ve chosen to measure the performance of your models clearly discussed and defined?_
 - _Have you provided reasonable justification for the metrics chosen based on the problem and solution?_
 
+___
 
 ## II. Analysis
 _(approx. 2-4 pages)_
@@ -59,6 +63,7 @@ In this section, you will need to provide a clearly defined benchmark result or 
 - _Has some result or value been provided that acts as a benchmark for measuring performance?_
 - _Is it clear how this result or value was obtained (whether by data or by hypothesis)?_
 
+___
 
 ## III. Methodology
 _(approx. 3-5 pages)_
@@ -81,6 +86,7 @@ In this section, you will need to discuss the process of improvement you made up
 - _Is the process of improvement clearly documented, such as what techniques were used?_
 - _Are intermediate and final solutions clearly reported as the process is improved?_
 
+___
 
 ## IV. Results
 _(approx. 2-3 pages)_
@@ -98,6 +104,7 @@ In this section, your model’s final solution and its results should be compare
 - _Have you thoroughly analyzed and discussed the final solution?_
 - _Is the final solution significant enough to have solved the problem?_
 
+___
 
 ## V. Conclusion
 _(approx. 1-2 pages)_
@@ -132,3 +139,9 @@ In this section, you will need to provide discussion as to how one aspect of the
 - Are all the resources used for this project correctly cited and referenced?
 - Is the code that implements your solution easily readable and properly commented?
 - Does the code execute without error and produce results similar to those reported?
+
+---
+References:
+<br>
+<sup>1</sup>Madan, Saluja, Zhao[Automated Bitcoin Trading via Machine Learning Algorithms](file:///Users/markblack/Google%20Drive/Udacity%20ML/machine-learning-master/projects/capstone/research/Isaac%20Madan,%20Shaurya%20Saluja,%20Aojia%20Zhao,Automated%20Bitcoin%20Trading%20via%20Machine%20Learning%20Algorithms.pdf)
+<br>
