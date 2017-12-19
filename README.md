@@ -30,7 +30,7 @@ Two Python utility modules are used for training and evaluation.
 * ```model.py```: This defines the model, optimizer, and loss functions.
 * ```input.py```: This defines the image input and preprocessing data pipelines.
 Report
-A final report explaining this project and the surrounding problem domain is available as report.pdf.
+A final report explaining this project and the surrounding problem domain is available as * ```report.pdf```.
 
 #### License---
 ---
