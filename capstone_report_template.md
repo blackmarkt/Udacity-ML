@@ -85,7 +85,7 @@ Number of Transactions | Continuous |  Total number of unique Bitcoin transactio
 
 A dataframe of all the variables:
 
-<<img src="report_images/dfs.png" width="500"/>
+<img src="report_images/dfs.png" width="500"/>
 
 The start and end dates were selected primarily because the dataset was wholly intact for this period with no corrupt or missing data points like NAN's or Inf's. All the data seemed to be clean and as reliable for this particular exercise. The dates for the datasets are: 
 
@@ -102,9 +102,13 @@ And the the training and testing sets were broken up using an 80/20 split:
 
 
 ### Exploratory Visualization
-In this section, you will need to provide some form of visualization that summarizes or extracts a relevant characteristic or feature about the data. The visualization should adequately support the data being used. Discuss why this visualization was chosen and how it is relevant. Questions to ask yourself when writing this section:
+Below is a plot of all the variables:
 
-<<img src="report_images/general_plots.png" width="800"/>
+<img src="report_images/general_plots.png" width="800"/>
+
+For the purposes of this model the independent variables will be converted according to "diff" or the percent change from each day to the next. This will help normalize the variables. The distribution plot for each variable is below:
+
+<img src="report_images/diff_dist_plos.png" width="800"/>
 
 - _Have you visualized a relevant characteristic or feature about the dataset or input data?_
 - _Is the visualization thoroughly analyzed and discussed?_
@@ -142,7 +146,7 @@ In this section, all of your preprocessing steps will need to be clearly documen
 - _Based on the **Data Exploration** section, if there were abnormalities or characteristics that needed to be addressed, have they been properly corrected?_
 - _If no preprocessing is needed, has it been made clear why?_
 
-<<img src="report_images/dist_plots.png" width="800"/>
+<img src="report_images/dist_plots.png" width="800"/>
 
 From the scatter matrix and table below there are a number of feature pairs that exhibit collinearity. There are 3 options when dealing with highly correlated variables:
 
@@ -152,9 +156,9 @@ From the scatter matrix and table below there are a number of feature pairs that
 
 Feature reduction will be addressed later in the project. For the first run no features will be removed. 
 
-<<img src="report_images/corr_matrix_plot.png" width="500"/>
+<img src="report_images/corr_matrix_plot.png" width="500"/>
 
-<<img src="report_images/collinearity.png" width="550"/>
+<img src="report_images/collinearity.png" width="550"/>
 
 
 ### Implementation
