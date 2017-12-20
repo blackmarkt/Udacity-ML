@@ -144,15 +144,17 @@ In this section, all of your preprocessing steps will need to be clearly documen
 
 <<img src="report_images/dist_plots.png" width="800"/>
 
-<<img src="report_images/corr_matrix_plot.png" width="400"/>
-
-<<img src="report_images/collinearity.png" width="500"/>
-
-From the scatter matrix and the table there are a number of feature pairs that exhibit collinearity. There are 3 options when dealing with highly correlated variables:
+From the scatter matrix and table below there are a number of feature pairs that exhibit collinearity. There are 3 options when dealing with highly correlated variables:
 
 1. Reduce variables
 2. Combine them into a single variable
 3. Do nothing
+
+Feature reduction will be addressed later in the project. For the first run no features will be removed. 
+
+<<img src="report_images/corr_matrix_plot.png" width="500"/>
+
+<<img src="report_images/collinearity.png" width="550"/>
 
 
 ### Implementation
