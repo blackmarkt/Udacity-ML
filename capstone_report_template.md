@@ -10,7 +10,7 @@ ___
 _(approx. 1-2 pages)_
 
 ### Project Overview
-The field of finance is typically a stodgy tried and true industry where innovation is typically evolutionary rather than revolutionary. In the past few years the rapid rise in cryptocurrencies has ushered in a whole new digital financial ecosystem. Crytocurrencies have the potential to disrupt areas from payment processing to how we think about physical versus virtual assets. Bitcoin mania has swept the world as the price of the cryptocurrency continues to skyrocket. 
+The field of finance is typically a stodgy tried and true industry where innovation is more evolutionary  than revolutionary. In the past few years the rapid rise in cryptocurrencies has ushered in a whole new digital financial ecosystem. Crytocurrencies have the potential to disrupt areas from payment processing to how we think about physical versus virtual assets. Bitcoin mania has swept the world as the price of the cryptocurrency continues to skyrocket. 
 
 Finance professionals particularly those working on Wall Street have typically relied heavily on Excel spreadsheets, Econometrics and linear regression models for analysis. The rise of Machine Learning somewhat parallels the ascent of cryptocurriences as the businesses rapidly adopt and adjust to the era of "Big Data". This project explores the potential that Supervised Machine Learning in trying to predict the future price of Bitcoin.  
 
@@ -23,6 +23,19 @@ In this section, you will want to clearly define the problem that you are trying
 - _Is the problem statement clearly defined? Will the reader understand what you are expecting to solve?_
 - _Have you thoroughly discussed how you will attempt to solve the problem?_
 - _Is an anticipated solution clearly defined? Will the reader understand what results you are looking for?_
+
+Trying to predict the future price of any security or asset is central to Wall Street's ability to generate profitable trading and investment strategies. Bitcoin may have been originally intended to function as a digital payment processing system but participants have primarily been focused on it's speculative store of value. In the last year many crytocurrencies have risen more than tenfold in less than a year. Now with both the CBOE and CME introducing Bitcoin futures the motivation to forecast Bitcoin's daily price movements is a potentially lucrative endeavor<sup>3</sup>.
+
+This project will employ a wide variety of Classification algorithms in order predict if Bitcon's price will the "up" or "down" each day in the test set. 
+
+The following classifiers were selected:
+
+- AdaBoost (Ensemble)
+- Random Forest (Ensemble)
+- Bagging (Ensemble)
+- K-Nearest Neighbors (KNeighbors)
+- Support Vector Machines (SVM)
+- Logistic Regression
 
 ### Metrics
 In this section, you will need to clearly define the metrics or calculations you will use to measure performance of a model or result in your project. These calculations and metrics should be justified based on the characteristics of the problem and problem domain. Questions to ask yourself when writing this section:
@@ -61,11 +74,21 @@ In this section, you will need to discuss the algorithms and techniques you inte
 - _Are the techniques to be used thoroughly discussed and justified?_
 - _Is it made clear how the input data or datasets will be handled by the algorithms and techniques chosen?_
 
+The following classifiers were selected:
+
+- AdaBoost (Ensemble)
+- Random Forest (Ensemble)
+- Bagging (Ensemble)
+- K-Nearest Neighbors (KNeighbors)
+- Support Vector Machines (SVM)
+- Logistic Regression
+
 ### Benchmark
 In this section, you will need to provide a clearly defined benchmark result or threshold for comparing across performances obtained by your solution. The reasoning behind the benchmark (in the case where it is not an established result) should be discussed. Questions to ask yourself when writing this section:
 - _Has some result or value been provided that acts as a benchmark for measuring performance?_
 - _Is it clear how this result or value was obtained (whether by data or by hypothesis)?_
 
+```Naive Predictor: [Accuracy score: 0.5579, F-score: 0.6120]```
 ___
 
 ## III. Methodology
@@ -158,4 +181,6 @@ References:
 <sup>1</sup>Madan, Saluja, Zhao[Automated Bitcoin Trading via Machine Learning Algorithms](file:///Users/markblack/Google%20Drive/Udacity%20ML/machine-learning-master/projects/capstone/research/Isaac%20Madan,%20Shaurya%20Saluja,%20Aojia%20Zhao,Automated%20Bitcoin%20Trading%20via%20Machine%20Learning%20Algorithms.pdf)
 <br>
 <sup>2</sup> A Quandl account is necessary in order to access the API or datasets
+<br>
+<sup>3</sup>["Duelling bitcoin futures go head-to-head as CME launches contract"](https://www.ft.com/content/877b867c-e18e-11e7-8f9f-de1c2175f5ce)
 <br>
