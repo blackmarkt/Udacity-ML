@@ -122,12 +122,15 @@ In this section, you will need to discuss the algorithms and techniques you inte
 
 The following classifiers were selected:
 
-- AdaBoost (Ensemble)
-- Random Forest (Ensemble)
-- Bagging (Ensemble)
-- K-Nearest Neighbors (KNeighbors)
-- Support Vector Machines (SVM)
-- Logistic Regression
+Classifier | Description
+--- | ---
+AdaBoost | Ensemble learner where each iteration improves prediction by weighting misclassified labels
+Random Forest | Ensemble learner that uses a decision tree structures to arrive at a classification determination
+Bagging | Ensemble learner that involves taking multiple samples from your training dataset (with replacement) and training a model for each sample. The final output prediction is averaged across the predictions of all of the sub-models.
+K-Nearest Neighbors (KNeighbors) | Uses k surrounding labels to classify. For continuous variables Euclidean distance
+Support Vector Machines (SVM) | Iterarive algorithm that creates separation gap(s) as wide as possible
+Logistic Regression | Special type of regression model that uses probability to determine a categorical response
+
 
 ### Benchmark
 In this section, you will need to provide a clearly defined benchmark result or threshold for comparing across performances obtained by your solution. The reasoning behind the benchmark (in the case where it is not an established result) should be discussed. Questions to ask yourself when writing this section:
@@ -148,7 +151,7 @@ In this section, all of your preprocessing steps will need to be clearly documen
 
 <img src="report_images/dist_plots.png" width="800"/>
 
-From the scatter matrix and table below there are a number of feature pairs that exhibit collinearity. There are 3 options when dealing with highly correlated variables:
+From the scatter matrix and table below only hashrate and marketcap seem to exhibit a significant level of collinearity. There are 3 options when dealing with highly correlated variables:
 
 1. Reduce variables
 2. Combine them into a single variable
