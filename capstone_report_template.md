@@ -1,5 +1,5 @@
 # Machine Learning Engineer Nanodegree
-## Capstone Project
+### Capstone Project
 #### Predicting the Price of Bitcoin
 Mark Black
 <br>
