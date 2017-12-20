@@ -7,7 +7,6 @@ December 19th, 2017
 ___
 
 ## I. Definition
-_(approx. 1-2 pages)_
 
 ### Project Overview
 The field of finance is typically a stodgy tried and true industry where innovation is more evolutionary  than revolutionary. In the past few years the rapid rise in cryptocurrencies has ushered in a whole new digital financial ecosystem. Crytocurrencies have the potential to disrupt areas from payment processing to how we think about physical versus virtual assets. Bitcoin mania has swept the world as the price of the cryptocurrency continues to skyrocket. 
@@ -19,14 +18,11 @@ Even though it is still early innings there is already a ton of work being focus
 This project deals with Bitcoin data on a daily time frame. Although it would have been nice and perhaps even more fruitful to use shorter time frame intervals unfortunately the availability of data for all variables played was the deciding factor. The datasets for all independent features can be found at [Blockchain.info](https://blockchain.info/) in the form of downloadable csv files. An alternative source to find the data is at [Quandl Blockchain](https://www.quandl.com/data/BCHAIN-Blockchain?keyword=)<sup>2</sup>.
 
 ### Problem Statement
-In this section, you will want to clearly define the problem that you are trying to solve, including the strategy (outline of tasks) you will use to achieve the desired solution. You should also thoroughly discuss what the intended solution will be for this problem. Questions to ask yourself when writing this section:
-- _Is the problem statement clearly defined? Will the reader understand what you are expecting to solve?_
-- _Have you thoroughly discussed how you will attempt to solve the problem?_
-- _Is an anticipated solution clearly defined? Will the reader understand what results you are looking for?_
-
 Trying to predict the future price of any security or asset is central to Wall Street's ability to generate profitable trading and investment strategies. Bitcoin may have been originally intended to function as a digital payment processing system but participants have primarily been focused on it's speculative store of value. In the last year many crytocurrencies have risen more than tenfold in less than a year. Now with both the CBOE and CME introducing Bitcoin futures the motivation to forecast Bitcoin's daily price movements is a potentially lucrative endeavor<sup>3</sup>.
 
-This project will employ a wide variety of Classification algorithms in order predict if Bitcon's price will the "up" or "down" each day in the test set. From there the accuracy and f-scores for each individual model will be assessed along with it's performance as an automated trading system. Testing the profitability metrics of a trading system is known as "backtesting". At the end of the day the viability for any trading strategy is it's profiability above and beyond a buy and hold benchmark strategy (usually the annual return of the S&P500 index).
+This project will employ a wide variety of Classification algorithms in order predict if Bitcon's price will the "up" or "down" each day in the test set. The data will be separated into sequential training and testing sets with each model being trained on the former and tested on the latter. 
+
+From there the accuracy and f-scores for each individual model will be assessed along with it's performance as an automated trading system. Testing the profitability metrics of a trading system is known as "backtesting". At the end of the day the viability for any trading strategy is it's profiability above and beyond a buy and hold benchmark strategy (usually the annual return of the S&P500 index).
 
 The following classifiers were selected:
 
@@ -38,9 +34,7 @@ The following classifiers were selected:
 - Logistic Regression
 
 ### Metrics
-In this section, you will need to clearly define the metrics or calculations you will use to measure performance of a model or result in your project. These calculations and metrics should be justified based on the characteristics of the problem and problem domain. Questions to ask yourself when writing this section:
-- _Are the metrics you’ve chosen to measure the performance of your models clearly discussed and defined?_
-- _Have you provided reasonable justification for the metrics chosen based on the problem and solution?_
+The preliminary metrics that the models will be judged against are precision, accuracy, recall and f-scores detailed below:
 
 ***F-beta Score***
 
@@ -67,18 +61,16 @@ It is a ratio of true positives(words classified as up, and which are actually u
 <img src="images/recall.png" width="300"/>
 <br>
 
+At the end of the day the name of the game is to develop models or trading strategyies that beat their respective benchmarks. The final metric that the models will be judged against is whether or not employing the algorithm in a trading model beats a simle "buy and hold" strategy. This is typically seen as the backtested growth rate of the trading strategy versus the real growth rate of the underlying asset for a certain period. Each day the model predicts correctly that day's historical returns will be added to the base and conversely subtracted when the model forecasts incorrectly. The end value of the model will then be compared against Bitcoin's end value for the period. 
+
+The models will need to prove their superior profitability.   
 ___
 
 ## II. Analysis
 _(approx. 2-4 pages)_
 
 ### Data Exploration
-In this section, you will be expected to analyze the data you are using for the problem. This data can either be in the form of a dataset (or datasets), input data (or input files), or even an environment. The type of data should be thoroughly described and, if possible, have basic statistics and information presented (such as discussion of input features or defining characteristics about the input or environment). Any abnormalities or interesting qualities about the data that may need to be addressed have been identified (such as features that need to be transformed or the possibility of outliers). Questions to ask yourself when writing this section:
-
-- _If a dataset is present for this problem, have you thoroughly discussed certain features about the dataset? Has a data sample been provided to the reader?_
-- _If a dataset is present for this problem, are statistics about the dataset calculated and reported? Have any relevant results from this calculation been discussed?_
-- _If a dataset is **not** present for this problem, has discussion been made about the input space or input data for your problem?_
-- _Are there any abnormalities or characteristics about the input space or dataset that need to be addressed? (categorical variables, missing values, outliers, etc.)_
+As previously mentioned the source of the data for this project is blockain.info. The selection for the feature space is broken down below:
 
 Input Feature | Continuous or Categorial | Description
 --- | --- | ---
@@ -89,17 +81,25 @@ Hashrate | Continuous | Average daily speed at which a computer is completing an
 Mining Difficulty | Continuous | How difficult it is to find a new block
 Market Cap | Continuous | End of day total number of bitcoins times market value
 Block Size | Continuous | Average block size (MB)
-Time Between Blocks | Continuous | Average time to mine a block in minutes
 Number of Transactions | Continuous |  Total number of unique Bitcoin transactions per day
+
+A dataframe of all the variables:
+
+<<img src="report_images/dfs.png" width="500"/>
+
+The start and end dates were selected primarily because the dataset was wholly intact for this period with no corrupt or missing data points like NAN's or Inf's. All the data seemed to be clean and as reliable for this particular exercise. The dates for the datasets are: 
 
 ```start='2013-01-01'```
 <br>
 ```end='2017-12-01'```
 <br>
+
+And the the training and testing sets were broken up using an 80/20 split:
 <br>
 ```Training set has 1436 samples.```
 <br>
 ```Testing set has 360 samples.```
+
 
 ### Exploratory Visualization
 In this section, you will need to provide some form of visualization that summarizes or extracts a relevant characteristic or feature about the data. The visualization should adequately support the data being used. Discuss why this visualization was chosen and how it is relevant. Questions to ask yourself when writing this section:
@@ -238,7 +238,7 @@ In this section, you will need to provide discussion as to how one aspect of the
 ---
 References:
 <br>
-<sup>1</sup>Madan, Saluja, Zhao[Automated Bitcoin Trading via Machine Learning Algorithms](file:///Users/markblack/Google%20Drive/Udacity%20ML/machine-learning-master/projects/capstone/research/Isaac%20Madan,%20Shaurya%20Saluja,%20Aojia%20Zhao,Automated%20Bitcoin%20Trading%20via%20Machine%20Learning%20Algorithms.pdf)
+<sup>1</sup>Madan, Saluja, Zhao"Automated Bitcoin Trading via Machine Learning Algorithms"
 <br>
 <sup>2</sup> A Quandl account is necessary in order to access the API or datasets
 <br>
