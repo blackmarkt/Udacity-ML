@@ -42,6 +42,31 @@ In this section, you will need to clearly define the metrics or calculations you
 - _Are the metrics you’ve chosen to measure the performance of your models clearly discussed and defined?_
 - _Have you provided reasonable justification for the metrics chosen based on the problem and solution?_
 
+***F-beta Score***
+
+<img src="images/fbeta.png" width="300"/>
+
+***Precision, Recall, Accuracy***
+<br>
+<br>
+**Accuracy** measures how often the classifier makes the correct prediction. It’s the ratio of the number of correct predictions to the total number of predictions (the number of test data points).
+<br>
+<br>
+<img src="images/accuracy.png" width="300"/>
+
+**Precision** tells us what proportion of forecasts we classified as up, actually were up.
+It is a ratio of true positives(words classified as up, and which are actually up) to all positives(all words classified as up, irrespective of whether that was the correct classification), in other words it is the ratio of
+
+<img src="images/precision.png" width="300"/>
+<br>
+
+
+**Recall(sensitivity)** tells us what proportion of forecasts that actually were up were classified by us as up.
+It is a ratio of true positives(words classified as up, and which are actually up) to all the words that were actually up, in other words it is the ratio of
+
+<img src="images/recall.png" width="300"/>
+<br>
+
 ___
 
 ## II. Analysis
@@ -67,6 +92,11 @@ Block Size | Continuous | Average block size (MB)
 Time Between Blocks | Continuous | Average time to mine a block in minutes
 Number of Transactions | Continuous |  Total number of unique Bitcoin transactions per day
 
+```start='2013-01-01'```
+<br>
+```end='2017-12-01'```
+<br>
+<br>
 ```Training set has 1436 samples.```
 <br>
 ```Testing set has 360 samples.```
