@@ -168,6 +168,12 @@ In this section, you will summarize the entire end-to-end problem solution and d
 - _Were there any difficult aspects of the project?_
 - _Does the final model and solution fit your expectations for the problem, and should it be used in a general setting to solve these types of problems?_
 
+Unfortunately it appears that the strategies employed by this project are not viable as a trading system as it greatly underperformed a simple "buy and hold" approach. 
+
+Some potential issues with this particular problem are that the data during the designated dates for Bitcoin only reflect a certain regime. Since Bitcoin's inception the price pattern trend has been only up meaning that there is an inherent positive bias to the data. If the crytocurrency space should enter a different regime the most obvious being a downtrend any model trained on data before 2018 will most likely still produce upwardly skewed predictions.
+
+Another drawback to this project is the restrictive limitation of daily data. Unfortunately intraday data on shorter intervals for the features listed was not available or was not freely available. It would interesting to see how these classifiers perform on larger datasets. 
+
 ### Improvement
 In this section, you will need to provide discussion as to how one aspect of the implementation you designed could be improved. As an example, consider ways your implementation can be made more general, and what would need to be modified. You do not need to make this improvement, but the potential solutions resulting from these changes are considered and compared/contrasted to your current solution. Questions to ask yourself when writing this section:
 - _Are there further improvements that could be made on the algorithms or techniques you used in this project?_
