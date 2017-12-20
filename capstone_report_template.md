@@ -144,6 +144,16 @@ In this section, all of your preprocessing steps will need to be clearly documen
 
 <<img src="report_images/dist_plots.png" width="800"/>
 
+<<img src="report_images/corr_matrix_plot.png" width="400"/>
+
+<<img src="report_images/collinearity.png" width="500"/>
+
+From the scatter matrix and the table there are a number of feature pairs that exhibit collinearity. There are 3 options when dealing with highly correlated variables:
+
+1. Reduce variables
+2. Combine them into a single variable
+3. Do nothing
+
 
 ### Implementation
 In this section, the process for which metrics, algorithms, and techniques that you implemented for the given data will need to be clearly documented. It should be abundantly clear how the implementation was carried out, and discussion should be made regarding any complications that occurred during this process. Questions to ask yourself when writing this section:
