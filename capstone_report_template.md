@@ -55,6 +55,18 @@ In this section, you will be expected to analyze the data you are using for the 
 - _If a dataset is **not** present for this problem, has discussion been made about the input space or input data for your problem?_
 - _Are there any abnormalities or characteristics about the input space or dataset that need to be addressed? (categorical variables, missing values, outliers, etc.)_
 
+Input Feature | Continuous or Categorial | Description
+--- | --- | ---
+Trading Volume | Continuous | Total Daily volume in USD from all exchanges
+Volaility | Continuous | Volatility is calculated as standard deviation from all market trades
+Bid/Ask Spread | Continuous | Average daily spread between the Bid and Ask
+Hashrate | Continuous | Average daily speed at which a computer is completing an operation in the Bitcoin code
+Mining Difficulty | Continuous | How difficult it is to find a new block
+Market Cap | Continuous | End of day total number of bitcoins times market value
+Block Size | Continuous | Average block size (MB)
+Time Between Blocks | Continuous | Average time to mine a block in minutes
+Number of Transactions | Continuous |  Total number of unique Bitcoin transactions per day
+
 ```Training set has 1436 samples.```
 <br>
 ```Testing set has 360 samples.```
