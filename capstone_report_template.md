@@ -149,6 +149,8 @@ The distribution plots of the features post differential conversion are below:
 
 <img src="report_images/dist_plots.png" width="800"/>
 
+When dealing with predicting future events it is necessary to "lag" the outcomes forward one day. This process is due to the fact that we are dealing with time and time series data sets where the features that are reported today are used to predict tomorrow's value. There is a whole branch of study for time series analysis which this project does not explore in-depth<sup9></sup>. 
+
 The second preprocessin step is dealing with collinearity. In order to identify variable paris that exhibit a significant level of collinearity a the scatter matrix and table are generated below: 
 
 <img src="report_images/corr_matrix_plot.png" width="700"/>
@@ -169,11 +171,11 @@ The third data proessing step is to address skewed variables. From the distribut
 
 The final processing step it is good practice to normalize all the numberic continuous features. This transformation process will level the playing field for the feature space in proper prepartion for the upcoming "Implementation" phase.
 
-Because our features only consisted of numeri continuous values there is no need for dummy variable conversions like "oe-hot encoding".
+Because our features only consisted of numeri continuous values there is no need for dummy variable conversions like "one-hot encoding" scheme.
 
 Further feature reduction  will be addressed later in the project.  
 
-Now it is time to split the data into training and testing sets.  There is a whole branch of study for time series analysis which this project does not explore but because the data is time series is not adviseable to randomly shuffle the data but rather maintain a sequential order of division. Using the 80/20 split the dates for the training set are ```2013-01-01``` to ```2016-12-06``` and the testing set dates are ```2016-12-07``` through ```2017-12-01```. 
+Now it is time to split the data into training and testing sets. Because the data is time series is not adviseable to randomly shuffle the data but rather maintain a sequential order of division. Using the 80/20 split the dates for the training set are ```2013-01-01``` to ```2016-12-06``` and the testing set dates are ```2016-12-07``` through ```2017-12-01```. 
 
 ### Implementation
 In this section, the process for which metrics, algorithms, and techniques that you implemented for the given data will need to be clearly documented. It should be abundantly clear how the implementation was carried out, and discussion should be made regarding any complications that occurred during this process. Questions to ask yourself when writing this section:
@@ -181,15 +183,27 @@ In this section, the process for which metrics, algorithms, and techniques that 
 - _Were there any complications with the original metrics or techniques that required changing prior to acquiring a solution?_
 - _Was there any part of the coding process (e.g., writing complicated functions) that should be documented?_
 
-Now that all the data has been preprocessed and split into their respective sets each individual classifier model can now be trained and tested. For the first 
+Now that the data is all prepped and split into their respective sets and the learner models all designated the implementation stage can commence.  Training, testing, predicting and acquiring the accuracy and fscores were all performed using the functions in the module ```preds.py```. Each classifier model is trained on the X_train independent features and y_train outcomes. Once each model is trained then the algorithms are each individually tested on the X_test independent feature dataset resulting in an array of binary predictions. 
 
-For the Logistic Regression and SVM model the predictions were all "up" or 1's so we have to drop these two models as they were unable to differentiate outcomes. In fact these 2 models performance would mirror the baseline "buy and hold" strategy.
+Once the testing/prediction phase is complete each model's predictions are evaluated against the actual y_test outcomes. The evaluation consists of the accuracy and fscore and each model's performance is shown below:
+
+<<img src="report_images/acc_fscore.png" width="800"/>
+
+
+
+<img src="report_images/perf_met_top3.png" width="800"/>
+
+
+
+
 
 ### Refinement
 In this section, you will need to discuss the process of improvement you made upon the algorithms and techniques you used in your implementation. For example, adjusting parameters for certain models to acquire improved solutions would fall under the refinement category. Your initial and final solutions should be reported, as well as any significant intermediate results as necessary. Questions to ask yourself when writing this section:
 - _Has an initial solution been found and clearly reported?_
 - _Is the process of improvement clearly documented, such as what techniques were used?_
 - _Are intermediate and final solutions clearly reported as the process is improved?_
+
+It may appear tht the Logistic Regression and SVM models performed best according to their accuracy and fscore but upon closer inspection this outperformance cannot be validated. The predictions for these 2 models were all "up" or 1's so we have to drop these two models as they were unable to differentiate outcomes. In fact these 2 models performance would mirror the baseline "buy and hold" strategy.
 
 ___
 
@@ -203,9 +217,7 @@ In this section, the final model and any supporting qualities should be evaluate
 - _Is the model robust enough for the problem? Do small perturbations (changes) in training data or the input space greatly affect the results?_
 - _Can results found from the model be trusted?_
 
-<<img src="report_images/acc_fscore.png" width="800"/>
 
-<img src="report_images/perf_met_top3.png" width="800"/>
 
 <<img src="report_images/all_mods_wf.png" width="700"/>
 
@@ -288,4 +300,6 @@ References:
 <sup>7</sup>[Investopedia Definition of "Alpha"](https://www.investopedia.com/terms/a/alpha.asp)
 <br>
 <sup>8</sup>[Rate of Return](https://en.wikipedia.org/wiki/Rate_of_return)
+<br>
+<sup>9</sup>[Introduction to Time Series Analysis](http://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm)
 <br>
