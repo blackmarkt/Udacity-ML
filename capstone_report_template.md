@@ -22,7 +22,7 @@ Trying to predict the future price of any security or asset is central to Wall S
 
 This project will employ a wide variety of Classification algorithms in order predict if Bitcon's price will the "up" or "down" each day in the test set. The data will be separated into sequential training and testing sets with each model being trained on the former and tested on the latter. 
 
-From there the accuracy and f-scores for each individual model will be assessed along with it's performance as an automated trading system. Testing the profitability metrics of a trading system is known as "backtesting". At the end of the day the viability for any trading strategy is it's profiability above and beyond a buy and hold benchmark strategy (usually the annual return of the S&P500 index).
+From there the accuracy and f-scores for each individual model will be assessed along with it's performance as an automated trading system. Testing the profitability metrics of a trading system is known as alpha generation. At the end of the day the viability for any trading strategy is it's profiability above and beyond a buy and hold benchmark strategy (usually the annual return of the S&P500 index).
 
 The following classifiers were selected:
 
@@ -61,9 +61,7 @@ It is a ratio of true positives(words classified as up, and which are actually u
 <img src="images/recall.png" width="300"/>
 <br>
 
-At the end of the day the name of the game is to develop models or trading strategyies that beat their respective benchmarks. The final metric that the models will be judged against is whether or not employing the algorithm in a trading model beats a simle "buy and hold" strategy. This is typically seen as the backtested growth rate of the trading strategy versus the real growth rate of the underlying asset for a certain period. Each day the model predicts correctly that day's historical returns will be added to the base and conversely subtracted when the model forecasts incorrectly. The end value of the model will then be compared against Bitcoin's end value for the period. 
-
-The models will need to prove their superior profitability.   
+At the end of the day the name of the game in finance is to develop models or trading strategyies that beat their respective benchmarks. The final metric that the models will be judged against is whether or not employing the algorithm in a trading model beats a simle "buy and hold" strategy. The net positive excess return of an active strategy above and beyond a certain index is known as "alpha". For this project alpha the benchmark is just simply investing in Bitcoin from the start to the end of the testing period and the active trading strategies are the machine learning classifier models. The models will need to prove their superior profitability.   
 ___
 
 ## II. Analysis
@@ -100,19 +98,18 @@ And the the training and testing sets were broken up using an 80/20 split:
 <br>
 ```Testing set has 360 samples.```
 
-
 ### Exploratory Visualization
-Below is a plot of all the variables:
+The datasets are fortunately intact meaning there are no missing or abnormal entries. However there are features that will need some sort of preprocessing adjustments.
+
+Below is a plot of all the variables. Just from a cursory perspective the variables have positive slopes wtih the exception of spread. From this an expectation of data preprocssing is going to be necessary. As a result histogram plots are generated in order to analyze the distribution characteristics of each indepedent variable. 
 
 <img src="report_images/general_plots.png" width="800"/>
 
-For the purposes of this model the independent variables will be converted according to differential or the percent change from each day to the next. This will help normalize the variables. The distribution plot for each variable is below:
+From the distribution plots of the raw values it is evident that most of the variables exhibit right or positive skewness<sup>4</sup>. Skewness signals that a feature or features contain values that lie near a single number but also a smaller subset of values that are lie or are distant from the single cluster. Algorithms can be sensitive to skewed distributions and can be adversely affected to underperform if the range is not properly normalized.
 
-<img src="report_images/diff_dist_plos.png" width="800"/>
+<img src="report_images/dist_plots.png" width="800"/>
 
-- _Have you visualized a relevant characteristic or feature about the dataset or input data?_
-- _Is the visualization thoroughly analyzed and discussed?_
-- _If a plot is provided, are the axes, title, and datum clearly defined?_
+For the purposes of this model the independent variables will be converted according to differential or the percent change from each day to the next. This will help normalize the variables. The methods and proesses for dealing with data transformations will be detailed in the "Data Proprocessing" stage. This preprocessing can help tremendously with the outcome and predictive power of nearly all learning algorithms.
 
 ### Algorithms and Techniques
 Choosing the right model along with the right parameters is key to optimzing your performance metrics<sup>5</sup>. 
@@ -128,36 +125,37 @@ K-Nearest Neighbors (KNeighbors) | | Uses k surrounding labels to classify. For 
 Support Vector Machines (SVM) | random_state = 0 | Iterarive algorithm that creates separation gap(s) as wide as possible. A primary advantage of SVM's is their ability to create non-linear decision boundaries and capture complex relationships in datasets but computationally suffer with complexity and as datasets become too large
 Logistic Regression | random_state = 0 |Special type of regression model that uses probability to determine a categorical response. Logistic Regression models tend to be fast for small dataset with limited features but have difficulty interpreting complex relationships within the data
 
-
 ### Benchmark
-In this section, you will need to provide a clearly defined benchmark result or threshold for comparing across performances obtained by your solution. The reasoning behind the benchmark (in the case where it is not an established result) should be discussed. Questions to ask yourself when writing this section:
-- _Has some result or value been provided that acts as a benchmark for measuring performance?_
-- _Is it clear how this result or value was obtained (whether by data or by hypothesis)?_
-
-The first performance hurdle for the classifier algorithms is to beat a Naive Bayes Predictor benchmark. A Naive predictor(6) is simply used to show what a base model without any intelligence or "naive" would look like. Since there is no clear benchmark or research paper to compare against the results will be benchmarked with random choice. The below Naive Predictor was generated in the report:
+The first performance hurdle for the classifier algorithms is to beat a Naive Bayes Predictor benchmark. A Naive predictor<sup>7</sup> is simply used to show what a base model without any intelligence or "naive" would look like. Since there is no clear benchmark or research paper to compare against the results will be benchmarked with random choice. The below Naive Predictor was generated in the report:
 
 ```Naive Predictor: [Accuracy score: 0.5579, F-score: 0.6120]```
 
-The second hurdle will be ranking the top 3 models in terms of their accuracy and f-scores and testing their "alpha<sup>6</sup> generation" potential against the passive "buy and hold strategy". This is a higher bar for any trading model to overcome as it must not only achieve a high level of accuracy in terms of predicting the daily direction of Bitcoin but must also exhibit a high level of precision on the days where the returns were significant.
+The second hurdle will be ranking the top 3 models in terms of their accuracy and f-scores and testing their "alpha<sup>8</sup> generation" potential against the passive "buy and hold strategy". This is a higher bar for any trading model to overcome as it must not only achieve a high level of accuracy in terms of predicting the daily direction of an asset but must also exhibit a high level of precision on the days where the returns were significant.
 
 ```The benchmark for Bitcoin is 12.917352```
 
 <img src="report_images/btc_growth.png" width="600"/>
-
 ___
 
 ## III. Methodology
 _(approx. 3-5 pages)_
 
 ### Data Preprocessing
-In this section, all of your preprocessing steps will need to be clearly documented, if any were necessary. From the previous section, any of the abnormalities or characteristics that you identified about the dataset will be addressed and corrected here. Questions to ask yourself when writing this section:
-- _If the algorithms chosen require preprocessing steps like feature selection or feature transformations, have they been properly documented?_
-- _Based on the **Data Exploration** section, if there were abnormalities or characteristics that needed to be addressed, have they been properly corrected?_
-- _If no preprocessing is needed, has it been made clear why?_
+Continuing from the Exploratory Visualization section the first preprocessing step will be to transform the raw values into differentials. This conversion involves taking the current day's value subtracting it from the previous day's value and dividing the difference by the previous day's value. In finance this percentage change is known as the "rate of return"<sup>8<sup>.
+  
+<img src="report_images/return.png" width="300"/>
+  
+The distribution plots of the features post differential conversion are below:
 
 <img src="report_images/dist_plots.png" width="800"/>
 
-The first step in data preprocessing is dealing with collinearity. In order to identify variable paris that exhibit a significant level of collinearity a the scatter matrix and table are generated. From these two visual cues the pair hashrate and marketcap are highly correlated at 0.992431. There are 3 options when dealing with highly correlated variables:
+The second preprocessin step is dealing with collinearity. In order to identify variable paris that exhibit a significant level of collinearity a the scatter matrix and table are generated below: 
+
+<img src="report_images/corr_matrix_plot.png" width="700"/>
+
+<img src="report_images/collinearity.png" width="700"/>
+
+From these two visual cues it is evident that the pair hashrate and marketcap are highly correlated at 0.992431. There are 3 options when dealing with highly correlated variables:
 
 1. Reduce variables
 2. Combine them into a single variable
@@ -165,22 +163,25 @@ The first step in data preprocessing is dealing with collinearity. In order to i
 
 For this project the decision to remove the marketcap was chosen as highly correlated variable may overstate the effects of a single variable.
 
-The second data proessing step is to address skewed variables. From the distribution plots (post differentialization) the 2 skewed variables are "volume" and "Bid/Ask Spread". In order to deal with skewed variables a logarithmic transformation is applied on the data so that the very large and very small values do not negatively affect the performance of a learning algorithm. Using a logarithmic transformation significantly reduces the range of values caused by outliers.
+The third data proessing step is to address skewed variables. From the distribution plots (post differentialization) the 2 skewed variables are "volume" and "Bid/Ask Spread". In order to deal with skewed variables a logarithmic transformation is applied on the data so that the very large and very small values do not negatively affect the performance of a learning algorithm. Using a logarithmic transformation significantly reduces the range of values caused by outliers.
 
 <img src="report_images/skewed_norm_plot.png" width="800"/>
 
-Further feature reduction will be addressed later in the project.  
+The final processing step it is good practice to normalize all the numberic continuous features. This transformation process will level the playing field for the feature space in proper prepartion for the upcoming "Implementation" phase.
 
-<img src="report_images/corr_matrix_plot.png" width="700"/>
+Because our features only consisted of numeri continuous values there is no need for dummy variable conversions like "oe-hot encoding".
 
-<img src="report_images/collinearity.png" width="700"/>
+Further feature reduction  will be addressed later in the project.  
 
+Now it is time to split the data into training and testing sets.  There is a whole branch of study for time series analysis which this project does not explore but because the data is time series is not adviseable to randomly shuffle the data but rather maintain a sequential order of division. Using the 80/20 split the dates for the training set are ```2013-01-01``` to ```2016-12-06``` and the testing set dates are ```2016-12-07``` through ```2017-12-01```. 
 
 ### Implementation
 In this section, the process for which metrics, algorithms, and techniques that you implemented for the given data will need to be clearly documented. It should be abundantly clear how the implementation was carried out, and discussion should be made regarding any complications that occurred during this process. Questions to ask yourself when writing this section:
 - _Is it made clear how the algorithms and techniques were implemented with the given datasets or input data?_
 - _Were there any complications with the original metrics or techniques that required changing prior to acquiring a solution?_
 - _Was there any part of the coding process (e.g., writing complicated functions) that should be documented?_
+
+Now that all the data has been preprocessed and split into their respective sets each individual classifier model can now be trained and tested. For the first 
 
 For the Logistic Regression and SVM model the predictions were all "up" or 1's so we have to drop these two models as they were unable to differentiate outcomes. In fact these 2 models performance would mirror the baseline "buy and hold" strategy.
 
@@ -278,9 +279,13 @@ References:
 <br>
 <sup>3</sup>["Duelling bitcoin futures go head-to-head as CME launches contract"](https://www.ft.com/content/877b867c-e18e-11e7-8f9f-de1c2175f5ce)
 <br>
-<sup>4</sup>[Naive Bayes Classifier](http://www.statsoft.com/textbook/naive-bayes-classifier)
+<sup>4</sup>[Skewed Distribution: Definition, Examples](http://www.statisticshowto.com/probability-and-statistics/skewed-distribution/)
 <br>
-<sup>5</sup>[Machine Learning Roadmap](http://scikit-learn.org/stable/tutorial/machine_learning_map/
+<sup>5</sup>[Naive Bayes Classifier](http://www.statsoft.com/textbook/naive-bayes-classifier)
 <br>
-<sup>6</sup>[Investopedia Definition of "Alpha"](https://www.investopedia.com/terms/a/alpha.asp)
+<sup>6</sup>[Machine Learning Roadmap](http://scikit-learn.org/stable/tutorial/machine_learning_map/
+<br>
+<sup>7</sup>[Investopedia Definition of "Alpha"](https://www.investopedia.com/terms/a/alpha.asp)
+<br>
+<sup>8</sup>[Rate of Return](https://en.wikipedia.org/wiki/Rate_of_return)
 <br>
