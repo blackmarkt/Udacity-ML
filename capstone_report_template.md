@@ -85,7 +85,7 @@ Number of Transactions | Continuous |  Total number of unique Bitcoin transactio
 
 A dataframe of all the variables:
 
-<img src="report_images/dfs.png" width="500"/>
+<img src="report_images/dfs.png" width="700"/>
 
 The start and end dates were selected primarily because the dataset was wholly intact for this period with no corrupt or missing data points like NAN's or Inf's. All the data seemed to be clean and as reliable for this particular exercise. The dates for the datasets are: 
 
@@ -171,9 +171,9 @@ The second data proessing step is to address skewed variables. From the distribu
 
 Further feature reduction will be addressed later in the project.  
 
-<img src="report_images/corr_matrix_plot.png" width="500"/>
+<img src="report_images/corr_matrix_plot.png" width="700"/>
 
-<img src="report_images/collinearity.png" width="550"/>
+<img src="report_images/collinearity.png" width="700"/>
 
 
 ### Implementation
@@ -206,7 +206,7 @@ In this section, the final model and any supporting qualities should be evaluate
 
 <img src="report_images/perf_met_top3.png" width="800"/>
 
-<<img src="report_images/all_mods_wf.png" width="600"/>
+<<img src="report_images/all_mods_wf.png" width="700"/>
 
 
 ### Justification
@@ -256,7 +256,7 @@ In this section, you will need to provide discussion as to how one aspect of the
 - _Were there algorithms or techniques you researched that you did not know how to implement, but would consider using if you knew how?_
 - _If you used your final solution as the new benchmark, do you think an even better solution exists?_
 
-<<img src="report_images/fin_mod_red_wf.png" width="600"/>
+<<img src="report_images/fin_mod_red_wf.png" width="700"/>
 -----------
 
 **Before submitting, ask yourself. . .**
