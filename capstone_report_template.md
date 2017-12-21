@@ -195,19 +195,25 @@ It is no real surprise that each model failed to generate any excess "alpha" as 
 <<img src="report_images/all_mods_wf.png" width="700"/>
 
 ### Refinement
-In this section, you will need to discuss the process of improvement you made upon the algorithms and techniques you used in your implementation. For example, adjusting parameters for certain models to acquire improved solutions would fall under the refinement category. Your initial and final solutions should be reported, as well as any significant intermediate results as necessary. Questions to ask yourself when writing this section:
-- _Has an initial solution been found and clearly reported?_
-- _Is the process of improvement clearly documented, such as what techniques were used?_
-- _Are intermediate and final solutions clearly reported as the process is improved?_
+The winning algorithm is AdaBoost Ensemble. 
 
+The premiere step in the refinement optimization proces is model tuning. GridSearchCV will be used to help tune our Adaboost model. GridSearchCV is an exhaustive procedure that uses the parameters of the estimator used to apply these methods are optimized by cross-validated grid-search over a parameter grid.
 
+A number of variations of the following parameter ```parameters = {'n_estimators':[100,200,300],'learning_rate':[0.1,0.01,0.001]}``` were attempted resulting in the following best score:
 
-In order to optimize the model
+<img src="report_images/tune_grid.png" width="400"/>
+
+Ironically the tuned model's prediction was once again all "1" or "Buy" signals for every day in the testing set. This confirms that the optimal approach for Bitcoin given for this project appears to be the "Buy and Hold" strategy. 
+
+Now that the winning model has been found the process of feature optimization can begin. The first step in improving the algorithm is feature reduction. This process involves ranking all the features in an attempt to rank their importance. From this ranked set the top number of features are selected. Below is the rankings of the top 4 significant features:
 
 <img src="report_images/red_feat.png" width="600"/>
 
-<img src="report_images/optimized_mod.png" width="400"/>
+The primary benefit with feature reduction is to time cost savings in terms of computational efficiency at the expense of loss of performance. For this situation it appears that reducing the feature space down to only the 4 most relevant features not only increased time efficiency but also a slight increase in performance as well.
 
+With less features required to train, the expectation is that training and prediction time is much lower — at the cost of performance metrics. From the visualization above, we see that the top five most important features contribute more than half of the importance of **all** features present in the data. This hints that we can attempt to *reduce the feature space* and simplify the information required for the model to learn. The code cell below will use the same optimized model you found earlier, and train it on the same training set *with only the top five important features*.
+
+<img src="report_images/optimized_mod.png" width="400"/>
 
 ___
 
