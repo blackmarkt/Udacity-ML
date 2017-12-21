@@ -106,7 +106,7 @@ Below is a plot of all the variables:
 
 <img src="report_images/general_plots.png" width="800"/>
 
-For the purposes of this model the independent variables will be converted according to "diff" or the percent change from each day to the next. This will help normalize the variables. The distribution plot for each variable is below:
+For the purposes of this model the independent variables will be converted according to differential or the percent change from each day to the next. This will help normalize the variables. The distribution plot for each variable is below:
 
 <img src="report_images/diff_dist_plos.png" width="800"/>
 
@@ -115,21 +115,18 @@ For the purposes of this model the independent variables will be converted accor
 - _If a plot is provided, are the axes, title, and datum clearly defined?_
 
 ### Algorithms and Techniques
-In this section, you will need to discuss the algorithms and techniques you intend to use for solving the problem. You should justify the use of each one based on the characteristics of the problem and the problem domain. Questions to ask yourself when writing this section:
-- _Are the algorithms you will use, including any default variables/parameters in the project clearly defined?_
-- _Are the techniques to be used thoroughly discussed and justified?_
-- _Is it made clear how the input data or datasets will be handled by the algorithms and techniques chosen?_
+Choosing the right model along with the right parameters is key to optimzing your performance metrics<sup>5</sup>. 
 
-The following classifiers were selected:
+Below is list of the classifiers selected for this particular project along with any parameter designations and a short description which includes each algorithm's respective primary strength and weakeness:
 
-Classifier | Description
---- | ---
-AdaBoost | Ensemble learner where each iteration improves prediction by weighting misclassified labels
-Random Forest | Ensemble learner that uses a decision tree structures to arrive at a classification determination
-Bagging | Ensemble learner that involves taking multiple samples from your training dataset (with replacement) and training a model for each sample. The final output prediction is averaged across the predictions of all of the sub-models.
-K-Nearest Neighbors (KNeighbors) | Uses k surrounding labels to classify. For continuous variables Euclidean distance
-Support Vector Machines (SVM) | Iterarive algorithm that creates separation gap(s) as wide as possible
-Logistic Regression | Special type of regression model that uses probability to determine a categorical response
+Classifier | Parameters | Description
+--- | --- | ---
+AdaBoost | random_state=0 | Ensemble learner where each iteration improves prediction by weighting misclassified labels. AdaBoost Ensemble algorithms are relatively fast but can be susceptible to noise and outliers. 
+Random Forest | | Ensemble learner that uses a decision tree structures to arrive at a classification determination. Random Forest modles are typically fast to train but slow to make predictions and can be computationally expensive/slow.
+Bagging | random_state=0 | Ensemble learner that involves taking multiple samples from your training dataset (with replacement) and training a model for each sample. The final output prediction is averaged across the predictions of all of the sub-models. 
+K-Nearest Neighbors (KNeighbors) | | Uses k surrounding labels to classify. For continuous variables Euclidean distance. KNN algorithms are east to understand and implement but at the cost of being computationally expensive
+Support Vector Machines (SVM) | random_state = 0 | Iterarive algorithm that creates separation gap(s) as wide as possible. A primary advantage of SVM's is their ability to create non-linear decision boundaries and capture complex relationships in datasets but computationally suffer with complexity and as datasets become too large
+Logistic Regression | random_state = 0 |Special type of regression model that uses probability to determine a categorical response. Logistic Regression models tend to be fast for small dataset with limited features but have difficulty interpreting complex relationships within the data
 
 
 ### Benchmark
@@ -137,7 +134,12 @@ In this section, you will need to provide a clearly defined benchmark result or 
 - _Has some result or value been provided that acts as a benchmark for measuring performance?_
 - _Is it clear how this result or value was obtained (whether by data or by hypothesis)?_
 
+The first performance hurdle for the classifier algorithms is to beat a Naive Bayes Predictor benchmark. A Naive predictor(6) is simply used to show what a base model without any intelligence or "naive" would look like. Since there is no clear benchmark or research paper to compare against the results will be benchmarked with random choice. The below Naive Predictor was generated in the report:
+
 ```Naive Predictor: [Accuracy score: 0.5579, F-score: 0.6120]```
+
+The second hurdle will be ranking the top 3 models in terms of their accuracy and f-scores and testing their "alpha<sup>6</sup> generation" potential against the passive "buy and hold strategy". This is a higher bar for any trading model to overcome as it must not only achieve a high level of accuracy in terms of predicting the daily direction of Bitcoin but must also exhibit a high level of precision on the days where the returns were significant.
+
 ___
 
 ## III. Methodology
@@ -170,6 +172,8 @@ In this section, the process for which metrics, algorithms, and techniques that 
 - _Were there any complications with the original metrics or techniques that required changing prior to acquiring a solution?_
 - _Was there any part of the coding process (e.g., writing complicated functions) that should be documented?_
 
+For the Logistic Regression and SVM model the predictions were all "up" or 1's so we have to drop these two models as they were unable to differentiate outcomes. In fact these 2 models performance would mirror the baseline "buy and hold" strategy.
+
 ### Refinement
 In this section, you will need to discuss the process of improvement you made upon the algorithms and techniques you used in your implementation. For example, adjusting parameters for certain models to acquire improved solutions would fall under the refinement category. Your initial and final solutions should be reported, as well as any significant intermediate results as necessary. Questions to ask yourself when writing this section:
 - _Has an initial solution been found and clearly reported?_
@@ -198,6 +202,17 @@ In this section, your model’s final solution and its results should be compare
 - _Are the final results found stronger than the benchmark result reported earlier?_
 - _Have you thoroughly analyzed and discussed the final solution?_
 - _Is the final solution significant enough to have solved the problem?_
+
+While the project fell short in overcoming the final hurdle of outperforming the "Buy and Hold" benchmark each model was able to achieve profitability. This is par for the course in finance as the competition is fierce and quantitative strategies are arbitraged away as more and more players exploit the same edge. Not only would a trading strategy need to beat it's benchmark but it would need to clearly exceed it as there are cost of doing business (trading fees/commissions, infrastructure costs, data fees, etc..) that will quickly eat away your profibaility. 
+
+This is simply the first step in the "alpha" discovery process. Some obvious areas of improvement this project could build on are:
+
+- more data or shorter time intervals with a lot more data
+- more unique exotic datasets relating to Bitcoin
+- playing with different parameter settings
+- 
+
+AdaBoost was able to outperform the Naive Bayes Predictor baseline accuracy and fscore.
 
 ___
 
@@ -250,4 +265,10 @@ References:
 <sup>2</sup> A Quandl account is necessary in order to access the API or datasets
 <br>
 <sup>3</sup>["Duelling bitcoin futures go head-to-head as CME launches contract"](https://www.ft.com/content/877b867c-e18e-11e7-8f9f-de1c2175f5ce)
+<br>
+<sup>4</sup>[Naive Bayes Classifier](http://www.statsoft.com/textbook/naive-bayes-classifier)
+<br>
+<sup>5</sup>[Machine Learning Roadmap](http://scikit-learn.org/stable/tutorial/machine_learning_map/
+<br>
+<sup>6</sup>["Alpha"](https://www.investopedia.com/terms/a/alpha.asp)
 <br>
