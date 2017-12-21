@@ -140,6 +140,7 @@ The first performance hurdle for the classifier algorithms is to beat a Naive Ba
 
 The second hurdle will be ranking the top 3 models in terms of their accuracy and f-scores and testing their "alpha<sup>6</sup> generation" potential against the passive "buy and hold strategy". This is a higher bar for any trading model to overcome as it must not only achieve a high level of accuracy in terms of predicting the daily direction of Bitcoin but must also exhibit a high level of precision on the days where the returns were significant.
 
+```The benchmark for Bitcoin is 12.917352```
 ___
 
 ## III. Methodology
@@ -153,13 +154,15 @@ In this section, all of your preprocessing steps will need to be clearly documen
 
 <img src="report_images/dist_plots.png" width="800"/>
 
-From the scatter matrix and table below only hashrate and marketcap seem to exhibit a significant level of collinearity. There are 3 options when dealing with highly correlated variables:
+From the scatter matrix and table below only hashrate and marketcap exhibit a significant level  of collinearity at 0.992431. There are 3 options when dealing with highly correlated variables:
 
 1. Reduce variables
 2. Combine them into a single variable
 3. Do nothing
 
-Feature reduction will be addressed later in the project. For the first run no features will be removed. 
+For this project the decision to remove the marketcap was chosen as highly correlated variable may overstate the effects of a single variable.
+
+Further feature reduction will be addressed later in the project.  
 
 <img src="report_images/corr_matrix_plot.png" width="500"/>
 
