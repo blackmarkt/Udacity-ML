@@ -157,13 +157,17 @@ In this section, all of your preprocessing steps will need to be clearly documen
 
 <img src="report_images/dist_plots.png" width="800"/>
 
-From the scatter matrix and table below only hashrate and marketcap exhibit a significant level  of collinearity at 0.992431. There are 3 options when dealing with highly correlated variables:
+The first step in data preprocessing is dealing with collinearity. In order to identify variable paris that exhibit a significant level of collinearity a the scatter matrix and table are generated. From these two visual cues the pair hashrate and marketcap are highly correlated at 0.992431. There are 3 options when dealing with highly correlated variables:
 
 1. Reduce variables
 2. Combine them into a single variable
 3. Do nothing
 
 For this project the decision to remove the marketcap was chosen as highly correlated variable may overstate the effects of a single variable.
+
+The second data proessing step is to address skewed variables. From the distribution plots (post differentialization) the 2 skewed variables are "volume" and "Bid/Ask Spread". In order to deal with skewed variables a logarithmic transformation is applied on the data so that the very large and very small values do not negatively affect the performance of a learning algorithm. Using a logarithmic transformation significantly reduces the range of values caused by outliers.
+
+<img src="report_images/skewed_norm_plot.png" width="800"/>
 
 Further feature reduction will be addressed later in the project.  
 
@@ -199,6 +203,8 @@ In this section, the final model and any supporting qualities should be evaluate
 - _Can results found from the model be trusted?_
 
 <<img src="report_images/acc_fscore.png" width="800"/>
+
+<img src="report_images/perf_met_top3.png" width="800"/>
 
 <<img src="report_images/all_mods_wf.png" width="600"/>
 
