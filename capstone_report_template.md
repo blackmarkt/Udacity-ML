@@ -3,7 +3,7 @@
 #### Predicting the Price of Bitcoin
 Mark Black
 <br>
-December 19th, 2017
+December 17th, 2017
 ___
 
 ## I. Definition
@@ -224,18 +224,13 @@ Finally the fruits of tuning and refining our model and training set are realize
 ___
 
 ## IV. Results
-_(approx. 2-3 pages)_
 
 ### Model Evaluation and Validation
-In this section, the final model and any supporting qualities should be evaluated in detail. It should be clear how the final model was derived and why this model was chosen. In addition, some type of analysis should be used to validate the robustness of this model and its solution, such as manipulating the input data or environment to see how the model’s solution is affected (this is called sensitivity analysis). Questions to ask yourself when writing this section:
-- _Is the final model reasonable and aligning with solution expectations? Are the final parameters of the model appropriate?_
-- _Has the final model been tested with various inputs to evaluate whether the model generalizes well to unseen data?_
-- _Is the model robust enough for the problem? Do small perturbations (changes) in training data or the input space greatly affect the results?_
-- _Can results found from the model be trusted?_
-
-AdaBoost Ensemble is a great classifier model because it is relatively fast, computationally efficient and has a intuitive iterative process that is more easily understood. 
+AdaBoost Ensemble is a great classifier model because it is relatively fast, computationally efficient and has an intuitive iterative process that is more easily understood. The algorithm performed well by assigning more weight to the misclassifications in effort to learn from it's mistakes. 
 
 Because of Bitcoin's inherent volatility during the time interval for this project small misclassifications in the outcomes can lead to significant under or over-performance of the model in terms of alpha. If this model were employed with a more seasoned and less historically volatile asset like US Treasuries the consequential results would not as greatly affect performance. 
+
+Whenever money and real loss of money is involved it is necessary to thoroughly test a model before moving into a live production final stage. It is safe to assume that the results cannot be trusted and must be cross validated on more data and potential scenarios. This is project is merely the first step in that process and because of the end results warrants further investigation. 
 
 ### Justification
 While the project fell short in overcoming the final hurdle of outperforming the "Buy and Hold" benchmark each model was able to achieve profitability. While it is a little deflating to spend so much time on to developing an underperforming model it is much worse to have built a model that loses money at the same the benchmark rises. In the past couple years the finance industry in it's race to employ data science and machine learning techniques has experienced this very tragedy<sup> </sup.
@@ -250,7 +245,6 @@ This is simply the first step in the "alpha" discovery process. Some obvious are
 - continued tuning and feature reduction 
 
 AdaBoost was able to outperform the Naive Bayes Predictor baseline accuracy and fscore which is a win and the final tuned and reduced featured model almost kept up with the Bitcoin benchmark. This result was a little surprising given such that our accuracy and fscores were around 60%. While this model is not a certified money machine it is very promising and has definitely laid a promising foundation to build on.
-
 ___
 
 ## V. Conclusion
@@ -271,19 +265,27 @@ In this section, you will summarize the entire end-to-end problem solution and d
 - _Were there any difficult aspects of the project?_
 - _Does the final model and solution fit your expectations for the problem, and should it be used in a general setting to solve these types of problems?_
 
-Unfortunately it appears that the strategies employed by this project are not viable as a trading system as it greatly underperformed a simple "buy and hold" approach. 
+Unfortunately it appears that the strategies employed by this project are not viable as a trading system as it greatly underperformed a simple "buy and hold" approach.
+
+This exercise is critical to understanding the underlying forces that govern Bitcoin's price movements. Because cryptocurrencies are so new and technical the research involved in trying to understand the features from hash rate to mining difficulty are worth the time and effort alone. It may very well be that the true promise in cryptocurrencies rest in an unknown unintended benefit that has yet to be fully revealed and this project has unearthed some interesting characteristics about the technology.
 
 Some potential issues with this particular problem are that the data during the designated dates for Bitcoin only reflect a certain regime. Since Bitcoin's inception the price pattern trend has been only up meaning that there is an inherent positive bias to the data. If the crytocurrency space should enter a different regime the most obvious being a downtrend any model trained on data before 2018 will most likely still produce upwardly skewed predictions.
 
 Another drawback to this project is the restrictive limitation of daily data. Unfortunately intraday data on shorter intervals for the features listed was not available or was not freely available. It would interesting to see how these classifiers perform on larger datasets. 
 
-At the end of the day the return results were positive and quite unexpected. While very exciting and promising a more thorough stress test and vetting proess must follow in order to ensure that the algorithm is indeed legitimate. 
+At the end of the day the return results were positive and surpassed initial expectations. While very exciting and promising a more thorough stress test and vetting proess must follow in order to ensure that the algorithm is indeed legitimate. 
 
 ### Improvement
 In this section, you will need to provide discussion as to how one aspect of the implementation you designed could be improved. As an example, consider ways your implementation can be made more general, and what would need to be modified. You do not need to make this improvement, but the potential solutions resulting from these changes are considered and compared/contrasted to your current solution. Questions to ask yourself when writing this section:
 - _Are there further improvements that could be made on the algorithms or techniques you used in this project?_
 - _Were there algorithms or techniques you researched that you did not know how to implement, but would consider using if you knew how?_
 - _If you used your final solution as the new benchmark, do you think an even better solution exists?_
+
+One area of improvement in this model is overlaying a numeric model like a regression model on top of the classification model in order to predict what the next day's return will be. The interplay between these 2 models may enhance the overall return as the portfolio weights may be instituted. For instance if the classifier predicts up and the regressor predicts a strong return value then the portfolio could max out capital. 
+
+Another area of improvement would be to analyze all the metrics that trading systems are measured with such as Sharpe Ratios, Win/Loss Rates, etc... Today clients and investors want to not only achieve a high level of return but also value stable returns as well. A deeper dive into how the different models achieve their returns could redfine the designation of "best model".
+
+The next potential project concerning Bitcoin price prediction is going to employ Deep Learning. There was an early attempt at employing RNN Neural Networks using the Keras package in the initial planning stages but without the strong knowledge foundation the project was difficult to implement with limited time constraints. 
 
 -----------
 
