@@ -213,7 +213,7 @@ The primary benefit with feature reduction is to time cost savings in terms of c
 
 With less features required to train, the expectation is that training and prediction time is much lower — at the cost of performance metrics. From the visualization above, we see that the top five most important features contribute more than half of the importance of **all** features present in the data. This hints that we can attempt to *reduce the feature space* and simplify the information required for the model to learn. The code cell below will use the same optimized model you found earlier, and train it on the same training set *with only the top five important features*.
 
-<img src="report_images/optimized_mod.png" width="400"/>
+<img src="report_images/optimized_mod.png" width="320"/>
 
 ___
 
