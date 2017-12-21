@@ -178,24 +178,21 @@ Further feature reduction  will be addressed later in the project.
 Now it is time to split the data into training and testing sets. Because the data is time series is not adviseable to randomly shuffle the data but rather maintain a sequential order of division. Using the 80/20 split the dates for the training set are ```2013-01-01``` to ```2016-12-06``` and the testing set dates are ```2016-12-07``` through ```2017-12-01```. 
 
 ### Implementation
-In this section, the process for which metrics, algorithms, and techniques that you implemented for the given data will need to be clearly documented. It should be abundantly clear how the implementation was carried out, and discussion should be made regarding any complications that occurred during this process. Questions to ask yourself when writing this section:
-- _Is it made clear how the algorithms and techniques were implemented with the given datasets or input data?_
-- _Were there any complications with the original metrics or techniques that required changing prior to acquiring a solution?_
-- _Was there any part of the coding process (e.g., writing complicated functions) that should be documented?_
-
 Now that the data is all prepped and split into their respective sets and the learner models all designated the implementation stage can commence.  Training, testing, predicting and acquiring the accuracy and fscores were all performed using the functions in the module ```preds.py```. Each classifier model is trained on the X_train independent features and y_train outcomes. Once each model is trained then the algorithms are each individually tested on the X_test independent feature dataset resulting in an array of binary predictions. 
 
-Once the testing/prediction phase is complete each model's predictions are evaluated against the actual y_test outcomes. The evaluation consists of the accuracy and fscore and each model's performance is shown below:
+Once the testing/prediction phase is complete each model's predictions are evaluated against the actual y_test outcomes. 2 hoirzontal dashed lines shows the baseline Naive Bayes Predictor threshold.  The evaluation consists of the accuracy and fscore and each model's performance is shown below:
 
 <<img src="report_images/acc_fscore.png" width="800"/>
 
+It may appear tht the Logistic Regression and SVM models performed best according to their accuracy and fscore but upon closer inspection this outperformance cannot be validated. The predictions for these 2 models were all "up" or 1's so we have to drop these two models as they were unable to differentiate outcomes. In fact these 2 models performance would mirror the baseline "buy and hold" strategy. For this reason the 2 algorithms must be disregarded.
 
+Using the train_predict function a deeper analysis of the top 3 algorithms. In addition to accuracy and fscore the amount of computational time that each algorithm expended is displayed. Finally from the ```visuals.py``` module a plot of the top 3 performing classifiers is outlined:
 
 <img src="report_images/perf_met_top3.png" width="800"/>
 
+It is no real surprise that each model failed to generate any excess "alpha" as indicative of the across the board low accuracy and fscores. In order to calculate the return streams for each model and the Bitcoin benchmark a "walk-forward" function was created in the ```walkf_forward.py``` module. The function firstly evaluates if the prediction for the model was correct then if correct sums the day's returns with the day's starting value and if incorrect subtracts the day's returns from the starting value. Then the function iterates this process storing each end day's value until the terminal value is determined. Below is a plot of this sequence of return streams for each valid model compared against the Bitcoin benchmark:
 
-
-
+<<img src="report_images/all_mods_wf.png" width="700"/>
 
 ### Refinement
 In this section, you will need to discuss the process of improvement you made upon the algorithms and techniques you used in your implementation. For example, adjusting parameters for certain models to acquire improved solutions would fall under the refinement category. Your initial and final solutions should be reported, as well as any significant intermediate results as necessary. Questions to ask yourself when writing this section:
@@ -203,7 +200,14 @@ In this section, you will need to discuss the process of improvement you made up
 - _Is the process of improvement clearly documented, such as what techniques were used?_
 - _Are intermediate and final solutions clearly reported as the process is improved?_
 
-It may appear tht the Logistic Regression and SVM models performed best according to their accuracy and fscore but upon closer inspection this outperformance cannot be validated. The predictions for these 2 models were all "up" or 1's so we have to drop these two models as they were unable to differentiate outcomes. In fact these 2 models performance would mirror the baseline "buy and hold" strategy.
+
+
+In order to optimize the model
+
+<img src="report_images/red_feat.png" width="600"/>
+
+<img src="report_images/optimized_mod.png" width="400"/>
+
 
 ___
 
@@ -219,7 +223,6 @@ In this section, the final model and any supporting qualities should be evaluate
 
 
 
-<<img src="report_images/all_mods_wf.png" width="700"/>
 
 
 ### Justification
