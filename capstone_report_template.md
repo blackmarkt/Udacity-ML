@@ -209,11 +209,17 @@ Now that the winning model has been found the process of feature optimization ca
 
 <img src="report_images/red_feat.png" width="600"/>
 
-The primary benefit with feature reduction is to time cost savings in terms of computational efficiency at the expense of loss of performance. For this situation it appears that reducing the feature space down to only the 4 most relevant features not only increased time efficiency but also a slight increase in performance as well.
+The primary benefit with feature reduction is to time cost savings in terms of computational efficiency at the expense of loss of performance. For this situation it appears that reducing the feature space down to only the 5 most relevant features not only increased time efficiency but also a slight increase in performance as well. Reducing the features any further only leads the model predicting all "1" and thus reverting back to the default "Buy and Hold" strategy.
 
 With less features required to train, the expectation is that training and prediction time is much lower — at the cost of performance metrics. From the visualization above, we see that the top five most important features contribute more than half of the importance of **all** features present in the data. This hints that we can attempt to *reduce the feature space* and simplify the information required for the model to learn. The code cell below will use the same optimized model you found earlier, and train it on the same training set *with only the top five important features*.
 
 <img src="report_images/optimized_mod.png" width="320"/>
+
+Finally the fruits of tuning and refining our model and training set are realized with a significantly improved performance from the AdaBoost Ensemble classifier model. While still underperforming the benchmark the model was still able to greatly enhance it's return stream to a final:
+
+```Final Alpha Performance of the Optimzed Feature Set AdaBoost Classifier is 11.790559```
+
+<<img src="report_images/fin_mod_red_wf.png" width="700"/>
 
 ___
 
@@ -278,7 +284,6 @@ In this section, you will need to provide discussion as to how one aspect of the
 - _Were there algorithms or techniques you researched that you did not know how to implement, but would consider using if you knew how?_
 - _If you used your final solution as the new benchmark, do you think an even better solution exists?_
 
-<<img src="report_images/fin_mod_red_wf.png" width="700"/>
 -----------
 
 **Before submitting, ask yourself. . .**
