@@ -276,5 +276,5 @@ References:
 <br>
 <sup>5</sup>[Machine Learning Roadmap](http://scikit-learn.org/stable/tutorial/machine_learning_map/
 <br>
-<sup>6</sup>["Alpha"](https://www.investopedia.com/terms/a/alpha.asp)
+<sup>6</sup>[Investopedia Definition of "Alpha"](https://www.investopedia.com/terms/a/alpha.asp)
 <br>
