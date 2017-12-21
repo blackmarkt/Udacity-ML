@@ -141,6 +141,9 @@ The first performance hurdle for the classifier algorithms is to beat a Naive Ba
 The second hurdle will be ranking the top 3 models in terms of their accuracy and f-scores and testing their "alpha<sup>6</sup> generation" potential against the passive "buy and hold strategy". This is a higher bar for any trading model to overcome as it must not only achieve a high level of accuracy in terms of predicting the daily direction of Bitcoin but must also exhibit a high level of precision on the days where the returns were significant.
 
 ```The benchmark for Bitcoin is 12.917352```
+
+<img src="report_images/btc_growth.png" width="600"/>
+
 ___
 
 ## III. Methodology
