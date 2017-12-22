@@ -34,7 +34,7 @@ The following classifiers were selected:
 - Logistic Regression
 
 ### Metrics
-Once we have implemented a model, the most important question that arises is how good is the model? The most popular approach to evaluating a binary classification problems is by first starting to measure a model's accuracy, precision and f-score (also referred to as f-measure)<sup>3</sup>. These classification metrics will provide context for how well each model did compared against a designated baseline. Once calculations are complete a confusion matrix will represent the evaluation metrics in a very intuitive quickly accessible visualtion. The baseline for this project will be the Naive Bayes Predictor which will serve as the measure of performance of a very simple system. A more detailed description of each evaluation metric:
+Once we have implemented a model, the most important question that arises is how good is the model? The most popular approach to evaluating a binary classification problems is by first starting to measure a model's accuracy, precision and f-score (also referred to as f-measure)<sup>3</sup>. These classification metrics accuracy and f-score provide context for how well each model did compared against a designated baseline. Once calculations are complete evaluation metrics are typically put into some sort of visual representation like a confusion matrix. For this project because multiple models will be assessed the accuracy and f-scores for each model will be combined into a single plot in order to rank model performance. The baseline for this project will be the Naive Bayes Predictor which will serve as the measure of performance of a very simple system. A more detailed description of each evaluation metric:
 
 ***F-beta Score***
 
@@ -59,10 +59,6 @@ It is a ratio of true positives(words classified as up, and which are actually u
 
 <img src="images/recall.png" width="300"/>
 <br>
-
-**Confusion Matrix**
-
-<img src="images/conf_matrix.png" width="400"/>
 
 **Alpha**
 
