@@ -15,10 +15,10 @@ Finance professionals particularly those working on Wall Street have typically r
 
 Even though it is still early innings there is already a ton of work being focused on trying to understand and predict the price of cryptoassets. Much of this project draws inspiration from the work Madan, ***et al***, where Supervised Machine Learning was used to forecast the price of Bitcoin but on shorter intraday time frames<sup>1</sup> 
 
-This project deals with Bitcoin data on a daily time frame. Although it would have been nice and perhaps even more fruitful to use shorter time frame intervals unfortunately the availability of data for all variables played was the deciding factor. The datasets for all independent features can be found at [Blockchain.info](https://blockchain.info/) in the form of downloadable csv files. An alternative source to find the data is at [Quandl Blockchain](https://www.quandl.com/data/BCHAIN-Blockchain?keyword=)<sup>2</sup>.
+This project deals with Bitcoin data on a daily time frame. Although it would have been nice and perhaps even more fruitful to use shorter time frame intervals unfortunately the availability of data for all variables played was the deciding factor. The datasets for all independent features can be found at [Blockchain.info](https://blockchain.info/) in the form of downloadable csv files. An alternative source to find the data is at [Quandl Blockchain](https://www.quandl.com/data/BCHAIN-Blockchain?keyword=).
 
 ### Problem Statement
-Trying to predict the future price of any security or asset is central to Wall Street's ability to generate profitable trading and investment strategies. Bitcoin may have been originally intended to function as a digital payment processing system but participants have primarily been focused on it's speculative store of value. In the last year many crytocurrencies have risen more than tenfold in less than a year. Now with both the CBOE and CME introducing Bitcoin futures the motivation to forecast Bitcoin's daily price movements is a potentially lucrative endeavor<sup>3</sup>.
+Trying to predict the future price of any security or asset is central to Wall Street's ability to generate profitable trading and investment strategies. Bitcoin may have been originally intended to function as a digital payment processing system but participants have primarily been focused on it's speculative store of value. In the last year many crytocurrencies have risen more than tenfold in less than a year. Now with both the CBOE and CME introducing Bitcoin futures the motivation to forecast Bitcoin's daily price movements is a potentially lucrative endeavor<sup>2</sup>.
 
 This project will employ a wide variety of Classification algorithms in order predict if Bitcon's price will the "up" or "down" each day in the test set. The data will be separated into sequential training and testing sets with each model being trained on the former and tested on the latter. 
 
@@ -54,7 +54,6 @@ It is a ratio of true positives(words classified as up, and which are actually u
 <img src="images/precision.png" width="300"/>
 <br>
 
-
 **Recall(sensitivity)** tells us what proportion of forecasts that actually were up were classified by us as up.
 It is a ratio of true positives(words classified as up, and which are actually up) to all the words that were actually up, in other words it is the ratio of
 
@@ -65,7 +64,6 @@ At the end of the day the name of the game in finance is to develop models or tr
 ___
 
 ## II. Analysis
-_(approx. 2-4 pages)_
 
 ### Data Exploration
 As previously mentioned the source of the data for this project is blockain.info. The selection for the feature space is broken down below:
@@ -105,7 +103,7 @@ Below is a plot of all the variables. Just from a cursory perspective the variab
 
 <img src="report_images/general_plots.png" width="800"/>
 
-From the distribution plots of the raw values it is evident that most of the variables exhibit right or positive skewness<sup>4</sup>. Skewness signals that a feature or features contain values that lie near a single number but also a smaller subset of values that are lie or are distant from the single cluster. Algorithms can be sensitive to skewed distributions and can be adversely affected to underperform if the range is not properly normalized.
+From the distribution plots of the raw values it is evident that most of the variables exhibit right or positive skewness<sup>3</sup>. Skewness signals that a feature or features contain values that lie near a single number but also a smaller subset of values that are lie or are distant from the single cluster. Algorithms can be sensitive to skewed distributions and can be adversely affected to underperform if the range is not properly normalized.
 
 <img src="report_images/dist_plots.png" width="800"/>
 
@@ -126,22 +124,19 @@ Support Vector Machines (SVM) | random_state = 0 | Iterarive algorithm that crea
 Logistic Regression | random_state = 0 |Special type of regression model that uses probability to determine a categorical response. Logistic Regression models tend to be fast for small dataset with limited features but have difficulty interpreting complex relationships within the data
 
 ### Benchmark
-The first performance hurdle for the classifier algorithms is to beat a Naive Bayes Predictor benchmark. A Naive predictor<sup>7</sup> is simply used to show what a base model without any intelligence or "naive" would look like. Since there is no clear benchmark or research paper to compare against the results will be benchmarked with random choice. The below Naive Predictor was generated in the report:
+The first performance hurdle for the classifier algorithms is to beat a Naive Bayes Predictor benchmark. A Naive predictor<sup>4</sup> is simply used to show what a base model without any intelligence or "naive" would look like. Since there is no clear benchmark or research paper to compare against the results will be benchmarked with random choice. The below Naive Predictor was generated in the report:
 
 ```Naive Predictor: [Accuracy score: 0.5579, F-score: 0.6120]```
 
-The second hurdle will be ranking the top 3 models in terms of their accuracy and f-scores and testing their "alpha<sup>8</sup> generation" potential against the passive "buy and hold strategy". This is a higher bar for any trading model to overcome as it must not only achieve a high level of accuracy in terms of predicting the daily direction of an asset but must also exhibit a high level of precision on the days where the returns were significant.
+The second hurdle will be ranking the top 3 models in terms of their accuracy and f-scores and testing their "alpha<sup>5</sup> generation" potential against the passive "buy and hold strategy". This is a higher bar for any trading model to overcome as it must not only achieve a high level of accuracy in terms of predicting the daily direction of an asset but must also exhibit a high level of precision on the days where the returns were significant.
 
 ```The benchmark for Bitcoin is 12.917352```
-
-<img src="report_images/btc_growth.png" width="600"/>
 ___
 
 ## III. Methodology
-_(approx. 3-5 pages)_
 
 ### Data Preprocessing
-Continuing from the Exploratory Visualization section the first preprocessing step will be to transform the raw values into differentials. This conversion involves taking the current day's value subtracting it from the previous day's value and dividing the difference by the previous day's value. In finance this percentage change is known as the "rate of return"<sup>8<sup>.
+Continuing from the Exploratory Visualization section the first preprocessing step will be to transform the raw values into differentials. This conversion involves taking the current day's value subtracting it from the previous day's value and dividing the difference by the previous day's value. In finance this percentage change is known as the "rate of return"<sup>6<sup>.
   
 <img src="report_images/return.png" width="300"/>
   
@@ -149,7 +144,7 @@ The distribution plots of the features post differential conversion are below:
 
 <img src="report_images/dist_plots.png" width="800"/>
 
-When dealing with predicting future events it is necessary to "lag" the outcomes forward one day. This process is due to the fact that we are dealing with time and time series data sets where the features that are reported today are used to predict tomorrow's value. There is a whole branch of study for time series analysis which this project does not explore in-depth<sup9></sup>. 
+When dealing with predicting future events it is necessary to "lag" the outcomes forward one day. This process is due to the fact that we are dealing with time and time series data sets where the features that are reported today are used to predict tomorrow's value. There is a whole branch of study for time series analysis which this project does not explore in-depth<sup>7</sup>. 
 
 The second preprocessin step is dealing with collinearity. In order to identify variable paris that exhibit a significant level of collinearity a the scatter matrix and table are generated below: 
 
@@ -211,7 +206,7 @@ Now that the winning model has been found the process of feature optimization ca
 
 The primary benefit with feature reduction is to time cost savings in terms of computational efficiency at the expense of loss of performance. For this situation it appears that reducing the feature space down to only the 5 most relevant features not only increased time efficiency but also a slight increase in performance as well. Reducing the features any further only leads the model predicting all "1" and thus reverting back to the default "Buy and Hold" strategy.
 
-With less features required to train, the expectation is that training and prediction time is much lower — at the cost of performance metrics. From the visualization above, we see that the top five most important features contribute more than half of the importance of **all** features present in the data. This hints that we can attempt to *reduce the feature space* and simplify the information required for the model to learn. The code cell below will use the same optimized model you found earlier, and train it on the same training set *with only the top five important features*.
+With less features required to train, the expectation is that training and prediction time is much lower — at the cost of performance metrics. From the visualization above, we see that the top five most important features contribute more than half of the importance of all features present in the data. This hints that we can attempt to *reduce the feature space* and simplify the information required for the model to learn. The code cell below will use the same optimized model you found earlier, and train it on the same training set *with only the top five important features*.
 
 <img src="report_images/optimized_mod.png" width="320"/>
 
@@ -226,14 +221,17 @@ ___
 ## IV. Results
 
 ### Model Evaluation and Validation
-AdaBoost Ensemble is a great classifier model because it is relatively fast, computationally efficient and has an intuitive iterative process that is more easily understood. The algorithm performed well by assigning more weight to the misclassifications in effort to learn from it's mistakes. 
+AdaBoost Ensemble is a great classifier model because it is relatively fast, computationally efficient and has an intuitive iterative process that is more easily understood. The algorithm performed well by assigning more weight to the misclassifications in effort to learn from it's mistakes. Below are the parameter setting for AdaBoostClassifier from the sklearn.ensemble package:
+```AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None, learning_rate=1.0, n_estimators=50, random_state=0)```
 
 Because of Bitcoin's inherent volatility during the time interval for this project small misclassifications in the outcomes can lead to significant under or over-performance of the model in terms of alpha. If this model were employed with a more seasoned and less historically volatile asset like US Treasuries the consequential results would not as greatly affect performance. 
 
-Whenever money and real loss of money is involved it is necessary to thoroughly test a model before moving into a live production final stage. It is safe to assume that the results cannot be trusted and must be cross validated on more data and potential scenarios. This is project is merely the first step in that process and because of the end results warrants further investigation. 
+Whenever money and real loss of money is involved it is necessary to thoroughly test a model before moving into a live production final stage. It is safe to assume that the results cannot be trusted and must be cross validated on more data and potential scenarios. This project is merely the first step in that process and because of the end results warrants further investigation. 
+
+Therefore while educating and enlightening the robustness of the data and the model's predictions cannot wholly be trusted in forecasting future data. More testing and monitoring and developing will most likely need to follow.
 
 ### Justification
-While the project fell short in overcoming the final hurdle of outperforming the "Buy and Hold" benchmark each model was able to achieve profitability. While it is a little deflating to spend so much time on to developing an underperforming model it is much worse to have built a model that loses money at the same the benchmark rises. In the past couple years the finance industry in it's race to employ data science and machine learning techniques has experienced this very tragedy<sup> </sup.
+While the project fell short in overcoming the final hurdle of outperforming the "Buy and Hold" benchmark each model was able to achieve profitability. While it is a little deflating to spend so much time on to developing an underperforming model it is much worse to have built a model that loses money while simultaneously having the benchmark rise. In the past couple years the finance industry in it's race to employ data science and machine learning techniques has suffered from this very underperformance<sup>8</sup.
 
 Developing unfit or underperforming models is par for the course in finance as the competition is fierce and quantitative strategies are arbitraged away as more and more players exploit the same edge. Not only would a trading strategy need to beat it's benchmark but it would need to clearly exceed it as there are cost of doing business (trading fees/commissions, infrastructure costs, data fees, etc..) that will quickly eat away profibaility. 
 
@@ -248,76 +246,56 @@ AdaBoost was able to outperform the Naive Bayes Predictor baseline accuracy and 
 ___
 
 ## V. Conclusion
-_(approx. 1-2 pages)_
 
 ### Free-Form Visualization
-In this section, you will need to provide some form of visualization that emphasizes an important quality about the project. It is much more free-form, but should reasonably support a significant result or characteristic about the problem that you want to discuss. Questions to ask yourself when writing this section:
-- _Have you visualized a relevant or important quality about the problem, dataset, input data, or results?_
-- _Is the visualization thoroughly analyzed and discussed?_
-- _If a plot is provided, are the axes, title, and datum clearly defined?_
 
+<img src="report_images/btc_growth.png" width="600"/>
+
+One inescapable question when analyzing the price of Bitcoin at the time of this project is: Is Bitcoin a bubble? And how can you identify an asset bubble? Is it irrational exuberance for an unproductive speculative asset to increase in value over 12 times in less than 2 years? In finance this kind of price action is truly extraordinary and the context for this anomalous behavior is evident from the chart below<sup>9</sup>. Compared with other historical bubbles it would appear that this is "the" bubble to rule them all. 
+
+Why is this visual important to this project? The chart highlights the danger in using a model with this type of biased data to try to predict future outcomes. If classification models had been around during any of the other bubble mania events and were trained only on data preceding the fall the models most likely would not have been able to adjust quickly enough to avoid catastrophic losses. 
+
+In finance understanding regimes and cycles are critical to asset modeling and prediction. More of these topics will be discussed in the following sections.
+
+<<img src="report_images/btc_bubble.jpg" width="700"/>
 
 
 ### Reflection
-In this section, you will summarize the entire end-to-end problem solution and discuss one or two particular aspects of the project you found interesting or difficult. You are expected to reflect on the project as a whole to show that you have a firm understanding of the entire process employed in your work. Questions to ask yourself when writing this section:
-- _Have you thoroughly summarized the entire process you used for this project?_
-- _Were there any interesting aspects of the project?_
-- _Were there any difficult aspects of the project?_
-- _Does the final model and solution fit your expectations for the problem, and should it be used in a general setting to solve these types of problems?_
-
 Unfortunately it appears that the strategies employed by this project are not viable as a trading system as it greatly underperformed a simple "buy and hold" approach.
 
 This exercise is critical to understanding the underlying forces that govern Bitcoin's price movements. Because cryptocurrencies are so new and technical the research involved in trying to understand the features from hash rate to mining difficulty are worth the time and effort alone. It may very well be that the true promise in cryptocurrencies rest in an unknown unintended benefit that has yet to be fully revealed and this project has unearthed some interesting characteristics about the technology.
 
-Some potential issues with this particular problem are that the data during the designated dates for Bitcoin only reflect a certain regime. Since Bitcoin's inception the price pattern trend has been only up meaning that there is an inherent positive bias to the data. If the crytocurrency space should enter a different regime the most obvious being a downtrend any model trained on data before 2018 will most likely still produce upwardly skewed predictions.
+Some potential issues with this particular problem are that the data during the designated dates for Bitcoin only reflect a certain regime. Since Bitcoin's inception the price pattern trend has been only up meaning that there is an inherent positive bias to the data. This upward bias of the Bitcoin data is that it is difficult to beat the Bitcoin benchmark and as was seen during optimization improving the model tended to classify every day as a buy day. Another complication is should the crytocurrency space should enter a different regime the most obvious being a downtrend any model trained on data before 2018 will most likely still produce upwardly skewed predictions.
 
 Another drawback to this project is the restrictive limitation of daily data. Unfortunately intraday data on shorter intervals for the features listed was not available or was not freely available. It would interesting to see how these classifiers perform on larger datasets. 
 
 At the end of the day the return results were positive and surpassed initial expectations. While very exciting and promising a more thorough stress test and vetting proess must follow in order to ensure that the algorithm is indeed legitimate. 
 
 ### Improvement
-In this section, you will need to provide discussion as to how one aspect of the implementation you designed could be improved. As an example, consider ways your implementation can be made more general, and what would need to be modified. You do not need to make this improvement, but the potential solutions resulting from these changes are considered and compared/contrasted to your current solution. Questions to ask yourself when writing this section:
-- _Are there further improvements that could be made on the algorithms or techniques you used in this project?_
-- _Were there algorithms or techniques you researched that you did not know how to implement, but would consider using if you knew how?_
-- _If you used your final solution as the new benchmark, do you think an even better solution exists?_
+One area of improvement in this model is overlaying a numeric model like a regression model on top of the classification model in order to predict what the next day's potential return will be. The interplay between these 2 models may enhance the overall return as different portfolio weights may be instituted. For instance if the classifier predicts up and the regressor predicts a strong return value then the portfolio could max out capital and if there are conflicting signals use a smaller weight. 
 
-One area of improvement in this model is overlaying a numeric model like a regression model on top of the classification model in order to predict what the next day's return will be. The interplay between these 2 models may enhance the overall return as the portfolio weights may be instituted. For instance if the classifier predicts up and the regressor predicts a strong return value then the portfolio could max out capital. 
+Another area of improvement would be to analyze all the metrics that trading systems are measured with such as Sharpe Ratios, Win/Loss Rates, etc... Today clients and investors want to not only achieve a high level of return but also value the stability of those returns as well. A deeper dive into how the different models achieve their returns could redfine the designation of "best model".
 
-Another area of improvement would be to analyze all the metrics that trading systems are measured with such as Sharpe Ratios, Win/Loss Rates, etc... Today clients and investors want to not only achieve a high level of return but also value stable returns as well. A deeper dive into how the different models achieve their returns could redfine the designation of "best model".
-
-The next potential project concerning Bitcoin price prediction is going to employ Deep Learning. There was an early attempt at employing RNN Neural Networks using the Keras package in the initial planning stages but without the strong knowledge foundation the project was difficult to implement with limited time constraints. 
+In closing personally I am interested in deepening my understanding of Neural Networks so I have started investigating employing Deep Learning to a similar Bitoin project. In the very early stages of this project I started attempting using RNN Neural Networks from the Keras package but without the strong knowledge foundation the project was difficult to implement with limited time constraints. 
 
 -----------
 
-**Before submitting, ask yourself. . .**
-
-- Does the project report you’ve written follow a well-organized structure similar to that of the project template?
-- Is each section (particularly **Analysis** and **Methodology**) written in a clear, concise and specific fashion? Are there any ambiguous terms or phrases that need clarification?
-- Would the intended audience of your project be able to understand your analysis, methods, and results?
-- Have you properly proof-read your project report to assure there are minimal grammatical and spelling mistakes?
-- Are all the resources used for this project correctly cited and referenced?
-- Is the code that implements your solution easily readable and properly commented?
-- Does the code execute without error and produce results similar to those reported?
-
----
 References:
 <br>
 <sup>1</sup>Madan, Saluja, Zhao"Automated Bitcoin Trading via Machine Learning Algorithms"
 <br>
-<sup>2</sup> A Quandl account is necessary in order to access the API or datasets
+<sup>2</sup>["Duelling bitcoin futures go head-to-head as CME launches contract"](https://www.ft.com/content/877b867c-e18e-11e7-8f9f-de1c2175f5ce)
 <br>
-<sup>3</sup>["Duelling bitcoin futures go head-to-head as CME launches contract"](https://www.ft.com/content/877b867c-e18e-11e7-8f9f-de1c2175f5ce)
+<sup>3</sup>[Skewed Distribution: Definition, Examples](http://www.statisticshowto.com/probability-and-statistics/skewed-distribution/)
 <br>
-<sup>4</sup>[Skewed Distribution: Definition, Examples](http://www.statisticshowto.com/probability-and-statistics/skewed-distribution/)
+<sup>4</sup>[Naive Bayes Classifier](http://www.statsoft.com/textbook/naive-bayes-classifier)
 <br>
-<sup>5</sup>[Naive Bayes Classifier](http://www.statsoft.com/textbook/naive-bayes-classifier)
+<sup>5</sup>[Investopedia Definition of "Alpha"](https://www.investopedia.com/terms/a/alpha.asp)
 <br>
-<sup>6</sup>[Machine Learning Roadmap](http://scikit-learn.org/stable/tutorial/machine_learning_map/
+<sup>6</sup>[Rate of Return](https://en.wikipedia.org/wiki/Rate_of_return)
 <br>
-<sup>7</sup>[Investopedia Definition of "Alpha"](https://www.investopedia.com/terms/a/alpha.asp)
+<sup>7</sup>[Introduction to Time Series Analysis](http://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm)
 <br>
-<sup>8</sup>[Rate of Return](https://en.wikipedia.org/wiki/Rate_of_return)
+<sup>8</sup>[The Future Is Bumpy: High-Tech Hedge Fund Hits Limits of Robot Stock Picking](https://www.wsj.com/articles/the-future-is-bumpy-high-tech-hedge-fund-hits-limits-of-robot-stock-picking-1513007557)
 <br>
-<sup>9</sup>[Introduction to Time Series Analysis](http://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm)
-<br>
-<sup> </sup>[The Future Is Bumpy: High-Tech Hedge Fund Hits Limits of Robot Stock Picking](https://www.wsj.com/articles/the-future-is-bumpy-high-tech-hedge-fund-hits-limits-of-robot-stock-picking-1513007557)
+<sup>9</sup>[It's Official: Bitcoin Surpasses "Tulip Mania", Is Now The Biggest Bubble In World History](http://www.zerohedge.com/news/2017-12-12/its-official-bitcoin-surpasses-tulip-mania-now-biggest-bubble-world-history)
