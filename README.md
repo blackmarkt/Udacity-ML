@@ -21,16 +21,13 @@ The libraries used for this project are os, time, functools, numpy, pandas, matp
 ---
 Several Python scripts are available to train the model:
 
-* ```preprocess.py```: Use this script to preprocess each of the downloaded images. This will detect the bounding boxes around the house numbers, crop out the numbers, and resize the numbers to 64x64 images.
-* ```split.py```: Use this script to split the data into training, validation, and test sets.
-* ```train.py```: Use this script to train the model. Training with an NVIDIA Titan X (Pascal) GPU will take approximately three days to reach 95% accuracy.
-* ```eval.py```: Use this script to periodically evaluate the validation set during training. After finishing training, run with -set=test to calculate accuracy and coverage on the test set.
-* ```pred.py```: Use this script to make predictions on new images in the predict directory. Images should be 64x64 jpegs. Results will be available in predict.csv.
-* ```export.py```: Use this script to extract the trained model in a format suitable for use in external applications.
-Two Python utility modules are used for training and evaluation.
+* ```preprocess.py```: script containing the function that imports the csv files, formats and returns a dataframe.
+* ```visuals.py```: script containing various plot functions
+* ```walk_forward.py```: script that contains the walk_forward function
+* ```pred.py```: script that contains the pred_dict, acc_test, f_test, and pred function 
 
-* ```model.py```: This defines the model, optimizer, and loss functions.
-* ```input.py```: This defines the image input and preprocessing data pipelines.
+* ```capstone_btc_project_121417```: All development Python code
+
 Report
 A final report explaining this project and the surrounding problem domain is available as * ```report.pdf```.
 
