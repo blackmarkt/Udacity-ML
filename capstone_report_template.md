@@ -11,7 +11,7 @@ ___
 ### Project Overview
 The field of finance is typically a stodgy tried and true industry where innovation is more evolutionary  than revolutionary. In the past few years the rapid rise in cryptocurrencies has ushered in a whole new digital financial ecosystem. Crytocurrencies have the potential to disrupt areas from payment processing to how we think about physical versus virtual assets. Bitcoin mania has swept the world as the price of the cryptocurrency continues to skyrocket. 
 
-Finance professionals particularly those working on Wall Street have typically relied heavily on Excel spreadsheets, Econometrics and linear regression models for analysis. The rise of Machine Learning somewhat parallels the ascent of cryptocurriences as the businesses rapidly adopt and adjust to the era of "Big Data". This project explores the potential that Supervised Machine Learning in trying to predict the future price of Bitcoin.  
+Finance professionals particularly those working on Wall Street have typically relied heavily on Excel spreadsheets, Econometrics and linear regression models for analysis. The rise of Machine Learning somewhat parallels the ascent of cryptocurriences as  businesses rapidly adopt and adjust to the era of "Big Data". This project explores the potential that Supervised Machine Learning holds in trying to predict the future price of Bitcoin.  
 
 Even though it is still early innings there is already a ton of work being focused on trying to understand and predict the price of cryptoassets. Much of this project draws inspiration from the work Madan, ***et al***, where Supervised Machine Learning was used to forecast the price of Bitcoin but on shorter intraday time frames<sup>1</sup> 
 
@@ -22,7 +22,7 @@ Trying to predict the future price of any security or asset is central to Wall S
 
 This project will employ a wide variety of Classification algorithms in order predict if Bitcon's price will the "up" or "down" each day in the test set. The data will be separated into sequential training and testing sets with each model being trained on the former and tested on the latter. 
 
-From there the accuracy and f-scores for each individual model will be assessed along with it's performance as an automated trading system. Testing the profitability metrics of a trading system is known as alpha generation. At the end of the day the viability for any trading strategy is it's profiability above and beyond a buy and hold benchmark strategy (usually the annual return of the S&P500 index).
+From there the accuracy and f-scores for each individual model will be assessed along with it's performance as an automated trading system. Testing the profitability metrics of a trading system is known as alpha generation. The viability for any trading strategy is it's profiability above and beyond a buy and hold benchmark strategy (usually the annual return of the S&P500 index).
 
 The following classifiers were selected:
 
@@ -60,13 +60,13 @@ It is a ratio of true positives(words classified as up, and which are actually u
 <img src="images/recall.png" width="300"/>
 <br>
 
-At the end of the day the name of the game in finance is to develop models or trading strategyies that beat their respective benchmarks. The final metric that the models will be judged against is whether or not employing the algorithm in a trading model beats a simle "buy and hold" strategy. The net positive excess return of an active strategy above and beyond a certain index is known as "alpha". For this project alpha the benchmark is just simply investing in Bitcoin from the start to the end of the testing period and the active trading strategies are the machine learning classifier models. The models will need to prove their superior profitability.   
+At the end of the day the name of the game in finance is to develop models or trading strategyies that beat their respective benchmarks. The final metric that the models will be judged against is whether or not employing the algorithm in a trading model beats a simple "buy and hold" strategy. The net positive excess return of an active strategy above and beyond a certain index is known as "alpha". For this project the benchmark is just simply investing in Bitcoin from the start to the end of the testing period and the active trading strategies are the machine learning classifier models. The models will need to prove their superior profitability.   
 ___
 
 ## II. Analysis
 
 ### Data Exploration
-As previously mentioned the source of the data for this project is blockain.info. The selection for the feature space is broken down below:
+As previously mentioned the source of the data for this project is blochain.info. The selection for the feature space is broken down below:
 
 Input Feature | Continuous or Categorial | Description
 --- | --- | ---
@@ -97,9 +97,9 @@ And the the training and testing sets were broken up using an 80/20 split:
 ```Testing set has 360 samples.```
 
 ### Exploratory Visualization
-The datasets are fortunately intact meaning there are no missing or abnormal entries. However there are features that will need some sort of preprocessing adjustments.
+Fortunately the datasets are intact meaning there are no missing or abnormal entries. However there are features that will need some sort of preprocessing adjustments.
 
-Below is a plot of all the variables. Just from a cursory perspective the variables have positive slopes wtih the exception of spread. From this an expectation of data preprocssing is going to be necessary. As a result histogram plots are generated in order to analyze the distribution characteristics of each indepedent variable. 
+Below is a plot of all the variables. Just from a cursory glance the variables have positive slopes wtih the exception of spread. From this an expectation of data preprocssing is going to be necessary. As a result histogram plots are generated in order to analyze the distribution characteristics of each indepedent variable. 
 
 <img src="report_images/general_plots.png" width="800"/>
 
@@ -107,10 +107,10 @@ From the distribution plots of the raw values it is evident that most of the var
 
 <img src="report_images/dist_plots.png" width="800"/>
 
-For the purposes of this model the independent variables will be converted according to differential or the percent change from each day to the next. This will help normalize the variables. The methods and proesses for dealing with data transformations will be detailed in the "Data Proprocessing" stage. This preprocessing can help tremendously with the outcome and predictive power of nearly all learning algorithms.
+For the purposes of this model the independent variables will be converted to differential or the percent change from each day to the next. This will help normalize the variables. The methods and proesses for dealing with data transformations will be detailed in the "Data Proprocessing" stage. Preprocessing can help tremendously with the outcome and predictive power of nearly all learning algorithms.
 
 ### Algorithms and Techniques
-Choosing the right model along with the right parameters is key to optimzing your performance metrics<sup>5</sup>. 
+Choosing the right model along with the right parameters is key to optimzing your performance metrics. 
 
 Below is list of the classifiers selected for this particular project along with any parameter designations and a short description which includes each algorithm's respective primary strength and weakeness:
 
@@ -146,53 +146,53 @@ The distribution plots of the features post differential conversion are below:
 
 When dealing with predicting future events it is necessary to "lag" the outcomes forward one day. This process is due to the fact that we are dealing with time and time series data sets where the features that are reported today are used to predict tomorrow's value. There is a whole branch of study for time series analysis which this project does not explore in-depth<sup>7</sup>. 
 
-The second preprocessin step is dealing with collinearity. In order to identify variable paris that exhibit a significant level of collinearity a the scatter matrix and table are generated below: 
+The second preprocessing step is dealing with collinearity. In order to identify variable pairs that exhibit a significant level of collinearity a the scatter matrix and table are generated below: 
 
 <img src="report_images/corr_matrix_plot.png" width="700"/>
 
 <img src="report_images/collinearity.png" width="700"/>
 
-From these two visual cues it is evident that the pair hashrate and marketcap are highly correlated at 0.992431. There are 3 options when dealing with highly correlated variables:
+From these two visual cues it is evident that the pair **hashrate** and **marketcap** are highly correlated at 0.992431. There are 3 options when dealing with highly correlated variables:
 
 1. Reduce variables
 2. Combine them into a single variable
 3. Do nothing
 
-For this project the decision to remove the marketcap was chosen as highly correlated variable may overstate the effects of a single variable.
+For this project the decision to remove the **marketcap** was chosen as highly correlated variable may overstate the effects of a single variable.
 
-The third data proessing step is to address skewed variables. From the distribution plots (post differentialization) the 2 skewed variables are "volume" and "Bid/Ask Spread". In order to deal with skewed variables a logarithmic transformation is applied on the data so that the very large and very small values do not negatively affect the performance of a learning algorithm. Using a logarithmic transformation significantly reduces the range of values caused by outliers.
+The third data proessing step is to address skewed variables. From the distribution plots (post differentialization) the 2 skewed variables are **volume** and **spread**. In order to deal with skewed variables a logarithmic transformation is applied on the data so that the very large and very small values do not negatively affect the performance of a learning algorithm. Using a logarithmic transformation significantly reduces the range of values caused by outliers.
 
 <img src="report_images/skewed_norm_plot.png" width="800"/>
 
-The final processing step it is good practice to normalize all the numberic continuous features. This transformation process will level the playing field for the feature space in proper prepartion for the upcoming "Implementation" phase.
+As the final processing step it is good practice to normalize all the numberic continuous features. This transformation process will level the playing field for the feature space in proper prepartion for the upcoming "Implementation" phase.
 
-Because our features only consisted of numeri continuous values there is no need for dummy variable conversions like "one-hot encoding" scheme.
+Because our features only consisted of numeric continuous values there is no need for dummy variable conversions like "one-hot encoding" scheme.
 
 Further feature reduction  will be addressed later in the project.  
 
 Now it is time to split the data into training and testing sets. Because the data is time series is not adviseable to randomly shuffle the data but rather maintain a sequential order of division. Using the 80/20 split the dates for the training set are ```2013-01-01``` to ```2016-12-06``` and the testing set dates are ```2016-12-07``` through ```2017-12-01```. 
 
 ### Implementation
-Now that the data is all prepped and split into their respective sets and the learner models all designated the implementation stage can commence.  Training, testing, predicting and acquiring the accuracy and fscores were all performed using the functions in the module ```preds.py```. Each classifier model is trained on the X_train independent features and y_train outcomes. Once each model is trained then the algorithms are each individually tested on the X_test independent feature dataset resulting in an array of binary predictions. 
+Now that the data is all prepped and split into their respective sets and the learner models are all designated the implementation stage can commence.  Training, testing, predicting and acquiring the accuracy and fscores were all performed using the functions in the module ```preds.py```. Each classifier model is trained on the X_train independent features and y_train outcomes. Once each model is trained then the algorithms are each individually tested on the X_test independent feature dataset resulting in an array of binary predictions. 
 
-Once the testing/prediction phase is complete each model's predictions are evaluated against the actual y_test outcomes. 2 hoirzontal dashed lines shows the baseline Naive Bayes Predictor threshold.  The evaluation consists of the accuracy and fscore and each model's performance is shown below:
+Once the testing/prediction phase is complete each model's predictions are evaluated against the actual y_test outcomes. 2 hoirzontal dashed lines show the baseline Naive Bayes Predictor threshold. Evaluation consists of the accuracy and fscore and each model's performance is shown below:
 
 <<img src="report_images/acc_fscore.png" width="800"/>
 
-It may appear tht the Logistic Regression and SVM models performed best according to their accuracy and fscore but upon closer inspection this outperformance cannot be validated. The predictions for these 2 models were all "up" or 1's so we have to drop these two models as they were unable to differentiate outcomes. In fact these 2 models performance would mirror the baseline "buy and hold" strategy. For this reason the 2 algorithms must be disregarded.
+It may appear that the Logistic Regression and SVM models performed best according to their accuracy and fscore but upon closer inspection this outperformance cannot be validated. The predictions for these 2 models were all "up" or 1's so we have to drop these two models as they were unable to differentiate outcomes. In fact these 2 models performance would mirror the baseline "buy and hold" strategy. For this reason the 2 algorithms must be disregarded.
 
-Using the train_predict function a deeper analysis of the top 3 algorithms. In addition to accuracy and fscore the amount of computational time that each algorithm expended is displayed. Finally from the ```visuals.py``` module a plot of the top 3 performing classifiers is outlined:
+Using the train_predict function a deeper analysis of the top 3 algorithms is initiated. In addition to accuracy and fscore the amount of computational time that each algorithm expended is displayed. Finally from the ```visuals.py``` module a plot of the top 3 performing classifiers is outlined:
 
 <img src="report_images/perf_met_top3.png" width="800"/>
 
-It is no real surprise that each model failed to generate any excess "alpha" as indicative of the across the board low accuracy and fscores. In order to calculate the return streams for each model and the Bitcoin benchmark a "walk-forward" function was created in the ```walkf_forward.py``` module. The function firstly evaluates if the prediction for the model was correct then if correct sums the day's returns with the day's starting value and if incorrect subtracts the day's returns from the starting value. Then the function iterates this process storing each end day's value until the terminal value is determined. Below is a plot of this sequence of return streams for each valid model compared against the Bitcoin benchmark:
+It is no real surprise that each model failed to generate any excess "alpha" as indicative of the across the board low accuracy and fscores. In order to calculate the return streams for each model and the Bitcoin benchmark a "walk-forward" function was created in the ```walkf_forward.py``` module. The function first evaluates if the prediction for the model was correct, if correct sums the day's returns with the day's starting value and if incorrect subtracts the day's returns from the starting value. Then the function iterates this process storing each end day's value until the terminal value is reached. Below is a plot of this sequence of return streams for each valid model compared against the Bitcoin benchmark:
 
 <<img src="report_images/all_mods_wf.png" width="700"/>
 
 ### Refinement
 The winning algorithm is AdaBoost Ensemble. 
 
-The premiere step in the refinement optimization proces is model tuning. GridSearchCV will be used to help tune our Adaboost model. GridSearchCV is an exhaustive procedure that uses the parameters of the estimator used to apply these methods are optimized by cross-validated grid-search over a parameter grid.
+The premiere step in the refinement optimization proces is model tuning. GridSearchCV will be used to help tune our Adaboost model. GridSearchCV essentially optimizes the parameters of a classifier in scikit.
 
 A number of variations of the following parameter ```parameters = {'n_estimators':[100,200,300],'learning_rate':[0.1,0.01,0.001]}``` were attempted resulting in the following best score:
 
@@ -204,13 +204,13 @@ Now that the winning model has been found the process of feature optimization ca
 
 <img src="report_images/red_feat.png" width="600"/>
 
-The primary benefit with feature reduction is to time cost savings in terms of computational efficiency at the expense of loss of performance. For this situation it appears that reducing the feature space down to only the 5 most relevant features not only increased time efficiency but also a slight increase in performance as well. Reducing the features any further only leads the model predicting all "1" and thus reverting back to the default "Buy and Hold" strategy.
+The primary benefit with feature reduction is time cost savings in terms of computational efficiency at the expense of loss of performance. For this situation it appears that reducing the feature space down to only the 5 most relevant features not only increased time efficiency but also precipitates a slight increase in performance as well. Reducing the features any further (< 4) only leads the model predicting all "1" and thus reverting back to the default "Buy and Hold" strategy.
 
-With less features required to train, the expectation is that training and prediction time is much lower — at the cost of performance metrics. From the visualization above, we see that the top five most important features contribute more than half of the importance of all features present in the data. This hints that we can attempt to *reduce the feature space* and simplify the information required for the model to learn. The code cell below will use the same optimized model you found earlier, and train it on the same training set *with only the top five important features*.
+With less features required to train, the expectation is that training and prediction time is lower at the cost of performance metrics. From the visualization above, we see that the top five most important features contribute more than half of the importance of all features present in the data. This hints that we can attempt to reduce the feature space and simplify the information required for the model to learn. The code cell below will use the same optimized model you found earlier, and train it on the same training set with only the top five important features.
 
 <img src="report_images/optimized_mod.png" width="320"/>
 
-Finally the fruits of tuning and refining our model and training set are realized with a significantly improved performance from the AdaBoost Ensemble classifier model. While still underperforming the benchmark the model was still able to greatly enhance it's return stream to a final:
+Finally the fruits of tuning and refining our model and training set are realized with a significantly improved performance from the AdaBoost Ensemble classifier model. While still underperforming the benchmark the model is now able to greatly enhance it's return stream:
 
 ```Final Alpha Performance of the Optimzed Feature Set AdaBoost Classifier is 11.790559```
 
@@ -226,12 +226,12 @@ AdaBoost Ensemble is a great classifier model because it is relatively fast, com
 
 Because of Bitcoin's inherent volatility during the time interval for this project small misclassifications in the outcomes can lead to significant under or over-performance of the model in terms of alpha. If this model were employed with a more seasoned and less historically volatile asset like US Treasuries the consequential results would not as greatly affect performance. 
 
-Whenever money and real loss of money is involved it is necessary to thoroughly test a model before moving into a live production final stage. It is safe to assume that the results cannot be trusted and must be cross validated on more data and potential scenarios. This project is merely the first step in that process and because of the end results warrants further investigation. 
+Whenever money and real loss of money is involved it is necessary to thoroughly test a model before moving into a live production final stage. It is safe to assume that the results cannot be trusted and must be cross validated on more data and potential scenarios. This project is merely the first step in a long process but the promsing end results warrants further investigation. 
 
-Therefore while educating and enlightening the robustness of the data and the model's predictions cannot wholly be trusted in forecasting future data. More testing and monitoring and developing will most likely need to follow.
+The robustness of the data and the model's predictions cannot wholly be trusted in forecasting future data. More testing, monitoring and developing will most likely need to follow.
 
 ### Justification
-While the project fell short in overcoming the final hurdle of outperforming the "Buy and Hold" benchmark each model was able to achieve profitability. While it is a little deflating to spend so much time on to developing an underperforming model it is much worse to have built a model that loses money while simultaneously having the benchmark rise. In the past couple years the finance industry in it's race to employ data science and machine learning techniques has suffered from this very underperformance<sup>8</sup.
+While the project fell short in overcoming the final hurdle of outperforming the "Buy and Hold" benchmark each model was able to achieve profitability. While it is a little deflating to spend so much time on to developing an underperforming model it is much worse to have built a model that loses money while simultaneously having the benchmark rise. In the past couple years the finance industry in it's race to employ data science and machine learning techniques has suffered from this very phenomenon<sup>8</sup.
 
 Developing unfit or underperforming models is par for the course in finance as the competition is fierce and quantitative strategies are arbitraged away as more and more players exploit the same edge. Not only would a trading strategy need to beat it's benchmark but it would need to clearly exceed it as there are cost of doing business (trading fees/commissions, infrastructure costs, data fees, etc..) that will quickly eat away profibaility. 
 
@@ -253,7 +253,7 @@ ___
 
 One inescapable question when analyzing the price of Bitcoin at the time of this project is: Is Bitcoin a bubble? And how can you identify an asset bubble? Is it irrational exuberance for an unproductive speculative asset to increase in value over 12 times in less than 2 years? In finance this kind of price action is truly extraordinary and the context for this anomalous behavior is evident from the chart below<sup>9</sup>. Compared with other historical bubbles it would appear that this is "the" bubble to rule them all. 
 
-Why is this visual important to this project? The chart highlights the danger in using a model with this type of biased data to try to predict future outcomes. If classification models had been around during any of the other bubble mania events and were trained only on data preceding the fall the models most likely would not have been able to adjust quickly enough to avoid catastrophic losses. 
+Why is this visual important to this project? The chart highlights the danger in using a model with this type of biased data to try to predict future outcomes. If classification models had been around during any of the other bubble mania events and were trained only on data preceding the fall, the models most likely would not have been able to adjust quickly enough to avoid catastrophic losses. 
 
 In finance understanding regimes and cycles are critical to asset modeling and prediction. More of these topics will be discussed in the following sections.
 
@@ -261,13 +261,11 @@ In finance understanding regimes and cycles are critical to asset modeling and p
 
 
 ### Reflection
-Unfortunately it appears that the strategies employed by this project are not viable as a trading system as it greatly underperformed a simple "buy and hold" approach.
+While it is disheartening that the algorithms employed by this project failed to outperform the benchmark a simple "buy and hold" approach the project's real value lies in the process of deconstruction and research. This exercise is critical to understanding the underlying forces that govern Bitcoin's price movements. Because cryptocurrencies are so new and technical the research involved in trying to understand the features from hash rate to mining difficulty are worth the time and effort alone. It may very well be that the true promise in cryptocurrencies rest in an unknown unintended benefit that has yet to be fully revealed and this project has unearthed some interesting characteristics about the technology.
 
-This exercise is critical to understanding the underlying forces that govern Bitcoin's price movements. Because cryptocurrencies are so new and technical the research involved in trying to understand the features from hash rate to mining difficulty are worth the time and effort alone. It may very well be that the true promise in cryptocurrencies rest in an unknown unintended benefit that has yet to be fully revealed and this project has unearthed some interesting characteristics about the technology.
+Some potential issues with this particular problem are that the data during the designated dates for Bitcoin only reflect a certain regime. Since Bitcoin's inception the price pattern trend has been only up meaning that there is an inherent positive bias to the data. This upward bias of the Bitcoin data makes it is difficult to beat the Bitcoin benchmark and as was seen during optimization improving the model tended to classify every day as a buy day. Another complication is should the crytocurrency space should enter a different regime the most obvious being a "firesale" downtrend any model trained on data before 2018 will most likely still produce upwardly skewed predictions.
 
-Some potential issues with this particular problem are that the data during the designated dates for Bitcoin only reflect a certain regime. Since Bitcoin's inception the price pattern trend has been only up meaning that there is an inherent positive bias to the data. This upward bias of the Bitcoin data is that it is difficult to beat the Bitcoin benchmark and as was seen during optimization improving the model tended to classify every day as a buy day. Another complication is should the crytocurrency space should enter a different regime the most obvious being a downtrend any model trained on data before 2018 will most likely still produce upwardly skewed predictions.
-
-Another drawback to this project is the restrictive limitation of daily data. Unfortunately intraday data on shorter intervals for the features listed was not available or was not freely available. It would interesting to see how these classifiers perform on larger datasets. 
+Another drawback to this project is the restrictive limitation of daily data. Unfortunately intraday data on shorter intervals for the features listed was not available or was not freely available. It would interesting to see how these classifiers perform on larger datasets allowing for the models to learn more from increased training and testing.
 
 At the end of the day the return results were positive and surpassed initial expectations. While very exciting and promising a more thorough stress test and vetting proess must follow in order to ensure that the algorithm is indeed legitimate. 
 
