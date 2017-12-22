@@ -34,7 +34,7 @@ The following classifiers were selected:
 - Logistic Regression
 
 ### Metrics
-The preliminary metrics that the models will be judged against are precision, accuracy, recall and f-scores detailed below:
+Once we have implemented a model, the most important question that arises is how good is the model? The most popular approach to evaluating a binary classification problems is by first starting to measure a model's accuracy, precision and f-score (also referred to as f-measure)<sup>3</sup>. These classification metrics will provide context for how well each model did compared against a designated baseline. Once calculations are complete a confusion matrix will represent the evaluation metrics in a very intuitive quickly accessible visualtion. The baseline for this project will be the Naive Bayes Predictor which will serve as the measure of performance of a very simple system. A more detailed description of each evaluation metric:
 
 ***F-beta Score***
 
@@ -60,7 +60,15 @@ It is a ratio of true positives(words classified as up, and which are actually u
 <img src="images/recall.png" width="300"/>
 <br>
 
-At the end of the day the name of the game in finance is to develop models or trading strategyies that beat their respective benchmarks. The final metric that the models will be judged against is whether or not employing the algorithm in a trading model beats a simple "buy and hold" strategy. The net positive excess return of an active strategy above and beyond a certain index is known as "alpha". For this project the benchmark is just simply investing in Bitcoin from the start to the end of the testing period and the active trading strategies are the machine learning classifier models. The models will need to prove their superior profitability.   
+**Confusion Matrix**
+
+<img src="images/conf_matrix.png" width="400"/>
+
+**Alpha**
+
+While these metrics are insightful and can be a good indicator of a model's robustness it may be the case that a model with high accuracy may still not have strong predictive power commonly known as "The Accuracy Paradox". At the end of the day the name of the game in finance is to develop models or trading strategyies that are not only profitable but exceptionally profitable. 
+
+The final metric that the models will be judged against is whether or not employing the algorithm in a trading model beats a simple "buy and hold" strategy. The net positive excess return of an active strategy above and beyond a certain index is known as "alpha". For this project the benchmark is just simply investing in Bitcoin from the start to the end of the testing period and the active trading strategies are the machine learning classifier models. The models will need to prove their superior profitability.   
 ___
 
 ## II. Analysis
@@ -103,7 +111,7 @@ Below is a plot of all the variables. Just from a cursory glance the variables h
 
 <img src="report_images/general_plots.png" width="800"/>
 
-From the distribution plots of the raw values it is evident that most of the variables exhibit right or positive skewness<sup>3</sup>. Skewness signals that a feature or features contain values that lie near a single number but also a smaller subset of values that are lie or are distant from the single cluster. Algorithms can be sensitive to skewed distributions and can be adversely affected to underperform if the range is not properly normalized.
+From the distribution plots of the raw values it is evident that most of the variables exhibit right or positive skewness<sup>4</sup>. Skewness signals that a feature or features contain values that lie near a single number but also a smaller subset of values that are lie or are distant from the single cluster. Algorithms can be sensitive to skewed distributions and can be adversely affected to underperform if the range is not properly normalized.
 
 <img src="report_images/dist_plots.png" width="800"/>
 
@@ -124,11 +132,11 @@ Support Vector Machines (SVM) | random_state = 0 | Iterarive algorithm that crea
 Logistic Regression | random_state = 0 |Special type of regression model that uses probability to determine a categorical response. Logistic Regression models tend to be fast for small dataset with limited features but have difficulty interpreting complex relationships within the data
 
 ### Benchmark
-The first performance hurdle for the classifier algorithms is to beat a Naive Bayes Predictor benchmark. A Naive predictor<sup>4</sup> is simply used to show what a base model without any intelligence or "naive" would look like. Since there is no clear benchmark or research paper to compare against the results will be benchmarked with random choice. The below Naive Predictor was generated in the report:
+The first performance hurdle for the classifier algorithms is to beat a Naive Bayes Predictor benchmark. A Naive predictor<sup>5</sup> is simply used to show what a base model without any intelligence or "naive" would look like. Since there is no clear benchmark or research paper to compare against the results will be benchmarked with random choice. The below Naive Predictor was generated in the report:
 
 ```Naive Predictor: [Accuracy score: 0.5579, F-score: 0.6120]```
 
-The second hurdle will be ranking the top 3 models in terms of their accuracy and f-scores and testing their "alpha<sup>5</sup> generation" potential against the passive "buy and hold strategy". This is a higher bar for any trading model to overcome as it must not only achieve a high level of accuracy in terms of predicting the daily direction of an asset but must also exhibit a high level of precision on the days where the returns were significant.
+The second hurdle will be ranking the top 3 models in terms of their accuracy and f-scores and testing their "alpha<sup>6</sup> generation" potential against the passive "buy and hold strategy". This is a higher bar for any trading model to overcome as it must not only achieve a high level of accuracy in terms of predicting the daily direction of an asset but must also exhibit a high level of precision on the days where the returns were significant.
 
 ```The benchmark for Bitcoin is 12.917352```
 ___
@@ -136,7 +144,7 @@ ___
 ## III. Methodology
 
 ### Data Preprocessing
-Continuing from the Exploratory Visualization section the first preprocessing step will be to transform the raw values into differentials. This conversion involves taking the current day's value subtracting it from the previous day's value and dividing the difference by the previous day's value. In finance this percentage change is known as the "rate of return"<sup>6<sup>.
+Continuing from the Exploratory Visualization section the first preprocessing step will be to transform the raw values into differentials. This conversion involves taking the current day's value subtracting it from the previous day's value and dividing the difference by the previous day's value. In finance this percentage change is known as the "rate of return"<sup>7<sup>.
   
 <img src="report_images/return.png" width="300"/>
   
@@ -144,7 +152,7 @@ The distribution plots of the features post differential conversion are below:
 
 <img src="report_images/dist_plots.png" width="800"/>
 
-When dealing with predicting future events it is necessary to "lag" the outcomes forward one day. This process is due to the fact that we are dealing with time and time series data sets where the features that are reported today are used to predict tomorrow's value. There is a whole branch of study for time series analysis which this project does not explore in-depth<sup>7</sup>. 
+When dealing with predicting future events it is necessary to "lag" the outcomes forward one day. This process is due to the fact that we are dealing with time and time series data sets where the features that are reported today are used to predict tomorrow's value. There is a whole branch of study for time series analysis which this project does not explore in-depth<sup>8</sup>. 
 
 The second preprocessing step is dealing with collinearity. In order to identify variable pairs that exhibit a significant level of collinearity a the scatter matrix and table are generated below: 
 
@@ -189,6 +197,8 @@ It is no real surprise that each model failed to generate any excess "alpha" as 
 
 <<img src="report_images/all_mods_wf.png" width="700"/>
 
+One coding challenge that arose with this particular project is trying to write modules for functions that are able to perform tasks that will be executed multiple times. Unfortunately scripting complex functions for plotting and implementing the models was tricky, time consuming and difficult to make work without generating embedded errors. In addition, Python 3 seems to have difficulty reloading a modified module<sup>9</sup>. None of the solutions proposed online worked and ultimately each time a module was changed and resaved the only way to recompile the altered module was to restart the kernel and run all the cells which became very time consuming. 
+
 ### Refinement
 The winning algorithm is AdaBoost Ensemble. 
 
@@ -231,7 +241,7 @@ Whenever money and real loss of money is involved it is necessary to thoroughly 
 The robustness of the data and the model's predictions cannot wholly be trusted in forecasting future data. More testing, monitoring and developing will most likely need to follow.
 
 ### Justification
-While the project fell short in overcoming the final hurdle of outperforming the "Buy and Hold" benchmark each model was able to achieve profitability. While it is a little deflating to spend so much time on to developing an underperforming model it is much worse to have built a model that loses money while simultaneously having the benchmark rise. In the past couple years the finance industry in it's race to employ data science and machine learning techniques has suffered from this very phenomenon<sup>8</sup.
+While the project fell short in overcoming the final hurdle of outperforming the "Buy and Hold" benchmark each model was able to achieve profitability. While it is a little deflating to spend so much time on to developing an underperforming model it is much worse to have built a model that loses money while simultaneously having the benchmark rise. In the past couple years the finance industry in it's race to employ data science and machine learning techniques has suffered from this very phenomenon<sup>10</sup.
 
 Developing unfit or underperforming models is par for the course in finance as the competition is fierce and quantitative strategies are arbitraged away as more and more players exploit the same edge. Not only would a trading strategy need to beat it's benchmark but it would need to clearly exceed it as there are cost of doing business (trading fees/commissions, infrastructure costs, data fees, etc..) that will quickly eat away profibaility. 
 
@@ -251,7 +261,7 @@ ___
 
 <img src="report_images/btc_growth.png" width="600"/>
 
-One inescapable question when analyzing the price of Bitcoin at the time of this project is: Is Bitcoin a bubble? And how can you identify an asset bubble? Is it irrational exuberance for an unproductive speculative asset to increase in value over 12 times in less than 2 years? In finance this kind of price action is truly extraordinary and the context for this anomalous behavior is evident from the chart below<sup>9</sup>. Compared with other historical bubbles it would appear that this is "the" bubble to rule them all. 
+One inescapable question when analyzing the price of Bitcoin at the time of this project is: Is Bitcoin a bubble? And how can you identify an asset bubble? Is it irrational exuberance for an unproductive speculative asset to increase in value over 12 times in less than 2 years? In finance this kind of price action is truly extraordinary and the context for this anomalous behavior is evident from the chart below<sup>11</sup>. Compared with other historical bubbles it would appear that this is "the" bubble to rule them all. 
 
 Why is this visual important to this project? The chart highlights the danger in using a model with this type of biased data to try to predict future outcomes. If classification models had been around during any of the other bubble mania events and were trained only on data preceding the fall, the models most likely would not have been able to adjust quickly enough to avoid catastrophic losses. 
 
@@ -282,18 +292,21 @@ References:
 <br>
 <sup>1</sup>Madan, Saluja, Zhao"Automated Bitcoin Trading via Machine Learning Algorithms"
 <br>
-<sup>2</sup>["Duelling bitcoin futures go head-to-head as CME launches contract"](https://www.ft.com/content/877b867c-e18e-11e7-8f9f-de1c2175f5ce)
+<sup>2</sup>[Precision and recall](https://en.wikipedia.org/wiki/Precision_and_recall)
+<sup>3</sup>["Duelling bitcoin futures go head-to-head as CME launches contract"](https://www.ft.com/content/877b867c-e18e-11e7-8f9f-de1c2175f5ce)
 <br>
-<sup>3</sup>[Skewed Distribution: Definition, Examples](http://www.statisticshowto.com/probability-and-statistics/skewed-distribution/)
+<sup>4</sup>[Skewed Distribution: Definition, Examples](http://www.statisticshowto.com/probability-and-statistics/skewed-distribution/)
 <br>
-<sup>4</sup>[Naive Bayes Classifier](http://www.statsoft.com/textbook/naive-bayes-classifier)
+<sup>5</sup>[Naive Bayes Classifier](http://www.statsoft.com/textbook/naive-bayes-classifier)
 <br>
-<sup>5</sup>[Investopedia Definition of "Alpha"](https://www.investopedia.com/terms/a/alpha.asp)
+<sup>6</sup>[Investopedia Definition of "Alpha"](https://www.investopedia.com/terms/a/alpha.asp)
 <br>
-<sup>6</sup>[Rate of Return](https://en.wikipedia.org/wiki/Rate_of_return)
+<sup>7</sup>[Python 3 complication with reloading modules](https://stackoverflow.com/questions/8122734/pythons-imp-reload-function-is-not-working)
 <br>
-<sup>7</sup>[Introduction to Time Series Analysis](http://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm)
+<sup>8</sup>[Rate of Return](https://en.wikipedia.org/wiki/Rate_of_return)
 <br>
-<sup>8</sup>[The Future Is Bumpy: High-Tech Hedge Fund Hits Limits of Robot Stock Picking](https://www.wsj.com/articles/the-future-is-bumpy-high-tech-hedge-fund-hits-limits-of-robot-stock-picking-1513007557)
+<sup>9</sup>[Introduction to Time Series Analysis](http://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm)
 <br>
-<sup>9</sup>[It's Official: Bitcoin Surpasses "Tulip Mania", Is Now The Biggest Bubble In World History](http://www.zerohedge.com/news/2017-12-12/its-official-bitcoin-surpasses-tulip-mania-now-biggest-bubble-world-history)
+<sup>10</sup>[The Future Is Bumpy: High-Tech Hedge Fund Hits Limits of Robot Stock Picking](https://www.wsj.com/articles/the-future-is-bumpy-high-tech-hedge-fund-hits-limits-of-robot-stock-picking-1513007557)
+<br>
+<sup>11</sup>[It's Official: Bitcoin Surpasses "Tulip Mania", Is Now The Biggest Bubble In World History](http://www.zerohedge.com/news/2017-12-12/its-official-bitcoin-surpasses-tulip-mania-now-biggest-bubble-world-history)
