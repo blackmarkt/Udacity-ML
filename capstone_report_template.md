@@ -193,6 +193,7 @@ It is no real surprise that each model failed to generate any excess "alpha" as 
 
 <<img src="report_images/all_mods_wf.png" width="700"/>
 
+#### Coding Challenges
 One coding challenge that arose with this particular project is trying to write modules for functions that are able to perform tasks that will be executed multiple times. Unfortunately scripting complex functions for plotting and implementing the models was tricky, time consuming and difficult to make work without generating embedded errors. In addition, Python 3 seems to have difficulty reloading a modified module<sup>9</sup>. None of the solutions proposed online worked and ultimately each time a module was changed and resaved the only way to recompile the altered module was to restart the kernel and run all the cells which became very time consuming. 
 
 ### Refinement
@@ -286,7 +287,7 @@ In closing personally I am interested in deepening my understanding of Neural Ne
 
 References:
 <br>
-<sup>1</sup>Madan, Saluja, Zhao"Automated Bitcoin Trading via Machine Learning Algorithms"
+<sup>1</sup>Madan, Saluja, Zhao ["Automated Bitcoin Trading via Machine Learning Algorithms"](http://ai2-s2-pdfs.s3.amazonaws.com/e065/3631b4a476abf5276a264f6bbff40b132061.pdf)
 <br>
 <sup>2</sup>[Precision and recall](https://en.wikipedia.org/wiki/Precision_and_recall)
 <sup>3</sup>["Duelling bitcoin futures go head-to-head as CME launches contract"](https://www.ft.com/content/877b867c-e18e-11e7-8f9f-de1c2175f5ce)
